@@ -48,7 +48,7 @@ function Dossiers() {
         {dossiers.map((x, i) => {
           const hi = i === 0;
           return (
-            <article key={x.t} className={`notch animate-rise flex min-h-72 flex-col rounded-2xl p-7 ${hi ? "bg-lime text-lime-foreground" : "bg-card text-card-foreground"}`} style={{ animationDelay: `${i * 0.1}s` }}>
+            <article key={x.title} className={`notch animate-rise flex min-h-72 flex-col rounded-2xl p-7 ${hi ? "bg-lime text-lime-foreground" : "bg-card text-card-foreground"}`} style={{ animationDelay: `${i * 0.1}s` }}>
               <div className="flex items-start justify-between gap-4">
                 <span className="font-wide text-6xl font-medium leading-none opacity-80">{String(i + 1).padStart(2, "0")}</span>
                 <span className="rounded-md border border-current/30 px-3 py-1.5 text-[11px]">{x.source === "url" ? t("urlSource") : t("imageSource")}</span>

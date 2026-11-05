@@ -159,7 +159,7 @@ const messages = {
     myChecks: "Ny fanamarinako",
     signOut: "Hivoaka",
     true: "MARINA",
-    false: "DISOO",
+    false: "DISO",
     doubtful: "MISALASALA",
     urlSource: "Rohy URL",
     imageSource: "Sary",
