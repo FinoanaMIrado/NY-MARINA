@@ -357,3 +357,90 @@ main.bg-ink .rounded-2xl.bg-ink-soft:hover {
     transition-duration: .01ms !important;
   }
 }
+
+@media (min-width: 1024px) {
+  .dashboard-stats-mode {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .dashboard-stats-content {
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .dashboard-stats-content .stats-page {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: clamp(.5rem, 1.5vh, 1rem);
+    overflow: hidden;
+    padding: clamp(.75rem, 2vh, 1.25rem) clamp(1rem, 1.5vw, 1.5rem);
+  }
+
+  .dashboard-stats-content .stats-page-title {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vh, 4rem);
+    line-height: .95;
+  }
+
+  .dashboard-stats-content .stats-cards {
+    min-height: 0;
+    grid-template-rows: clamp(6.5rem, 18vh, 9rem) clamp(5rem, 15vh, 7rem);
+    gap: clamp(.5rem, 1vw, .875rem);
+    margin-top: 0;
+  }
+
+  .dashboard-stats-content .stats-total-card {
+    min-height: 0;
+    padding: clamp(.75rem, 1.5vh, 1.25rem);
+  }
+
+  .dashboard-stats-content .stats-total-card > span:last-child {
+    font-size: clamp(3.5rem, 9vh, 5rem);
+  }
+
+  .dashboard-stats-content .stats-verdict-card,
+  .dashboard-stats-content .stats-share-card {
+    min-height: 0;
+    gap: .5rem;
+    padding: clamp(.65rem, 1.2vh, 1rem);
+  }
+
+  .dashboard-stats-content .stats-verdict-card > span:nth-child(2) {
+    font-size: clamp(2rem, 5.5vh, 3.25rem);
+  }
+
+  .dashboard-stats-content .stats-trend-card {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    margin-top: 0;
+    overflow: hidden;
+    padding: clamp(.75rem, 1.5vh, 1.25rem);
+  }
+
+  .dashboard-stats-content .stats-trend-card > h3 {
+    flex: none;
+    margin: 0;
+  }
+
+  .dashboard-stats-content .stats-chart {
+    display: flex;
+    min-height: 0;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5rem;
+  }
+
+  .dashboard-stats-content .stats-chart-svg {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+}

@@ -76,7 +76,7 @@ function Dashboard() {
   const { t } = useLanguage();
   const [tab, setTab] = useState<"verifier" | "dossiers" | "stats">("verifier");
   return (
-    <main className="flex min-h-screen bg-ink text-ink-foreground">
+    <main className={`flex min-h-screen bg-ink text-ink-foreground ${tab === "stats" ? "dashboard-stats-mode" : ""}`}>
       <aside className="sticky top-0 flex h-screen w-64 shrink-0 flex-col gap-2 border-r border-ink-foreground/10 p-6">
         <div className="space-y-5">
           <Link to="/" aria-label="Ny Marina — accueil" className="block">
@@ -93,7 +93,9 @@ function Dashboard() {
         </nav>
         <Link to="/" className="mt-auto rounded-xl bg-ink-soft px-4 py-3 text-sm opacity-80 hover:opacity-100">{t("signOut")}</Link>
       </aside>
-      <div className="flex-1 overflow-x-hidden">{tab === "verifier" ? <Verifier /> : tab === "dossiers" ? <Dossiers /> : <Stats />}</div>
+      <div className={`flex-1 overflow-x-hidden ${tab === "stats" ? "dashboard-stats-content" : ""}`}>
+        {tab === "verifier" ? <Verifier /> : tab === "dossiers" ? <Dossiers /> : <Stats />}
+      </div>
     </main>
   );
 }

@@ -22,7 +22,7 @@ function Curve() {
   const last = pts[pts.length - 1]!, first = pts[0]!;
   const area = `${line} L${last[0]},${H - P} L${first[0]},${H - P} Z`;
   return (
-    <svg viewBox={`0 0 ${W} ${H + 20}`} className="h-auto w-full">
+    <svg viewBox={`0 0 ${W} ${H + 20}`} className="stats-chart-svg h-auto w-full">
       <defs>
         <linearGradient id="curveFill" x1="0" x2="0" y1="0" y2="1">
           <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.45" />
@@ -53,20 +53,20 @@ export function Stats() {
   const order = ["VRAI", "FAUX", "DOUTEUX"] as const;
 
   return (
-    <section className="px-6 py-12">
-      <h2 className="text-6xl text-ink-foreground md:text-7xl">{t("statsTab")}</h2>
+    <section className="stats-page px-6 py-12">
+      <h2 className="stats-page-title text-6xl text-ink-foreground md:text-7xl">{t("statsTab")}</h2>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-4">
-        <div className="notch animate-rise flex min-h-48 flex-col rounded-2xl bg-lime p-7 text-lime-foreground md:col-span-2">
+      <div className="stats-cards mt-10 grid gap-5 md:grid-cols-4">
+        <div className="stats-total-card notch animate-rise flex min-h-48 flex-col rounded-2xl bg-lime p-7 text-lime-foreground md:col-span-2">
           <span className="text-xs uppercase opacity-70">{t("statsTotal")}</span>
           <span className="mt-auto font-wide text-8xl font-bold leading-none">{total}</span>
         </div>
-        <div className="notch animate-rise flex min-h-48 flex-col rounded-2xl bg-card p-7 text-card-foreground md:col-span-2" style={{ animationDelay: "0.1s" }}>
+        <div className="stats-total-card notch animate-rise flex min-h-48 flex-col rounded-2xl bg-card p-7 text-card-foreground md:col-span-2" style={{ animationDelay: "0.1s" }}>
           <span className="text-xs uppercase opacity-70">{t("statsAvg")}</span>
           <span className="mt-auto font-wide text-8xl font-bold leading-none">{avgScore}<span className="text-4xl opacity-60">%</span></span>
         </div>
         {order.map((s, i) => (
-          <div key={s} className={`animate-rise flex flex-col gap-4 rounded-2xl p-6 ${verdictChip[s]}`} style={{ animationDelay: `${0.2 + i * 0.1}s` }}>
+          <div key={s} className={`stats-verdict-card animate-rise flex flex-col gap-4 rounded-2xl p-6 ${verdictChip[s]}`} style={{ animationDelay: `${0.2 + i * 0.1}s` }}>
             <div className="flex items-center gap-2 font-wide text-sm font-bold">
               <VerdictIcon s={s} className="h-5 w-5" /> {labels[s]}
             </div>
@@ -74,7 +74,7 @@ export function Stats() {
             <span className="text-xs opacity-70">{counts[s]} / {total}</span>
           </div>
         ))}
-        <div className="animate-rise flex flex-col justify-center gap-3 rounded-2xl bg-ink-soft p-6" style={{ animationDelay: "0.5s" }}>
+        <div className="stats-share-card animate-rise flex flex-col justify-center gap-3 rounded-2xl bg-ink-soft p-6" style={{ animationDelay: "0.5s" }}>
           <span className="text-xs uppercase opacity-60">{t("statsShare")}</span>
           <div className="flex h-4 overflow-hidden rounded-full">
             {order.map((s) => <div key={s} className={verdictChip[s]} style={{ width: `${pct(s)}%` }} />)}
@@ -82,9 +82,9 @@ export function Stats() {
         </div>
       </div>
 
-      <div className="animate-rise mt-5 rounded-2xl bg-ink-soft p-7" style={{ animationDelay: "0.6s" }}>
+      <div className="stats-trend-card animate-rise mt-5 rounded-2xl bg-ink-soft p-7" style={{ animationDelay: "0.6s" }}>
         <h3 className="font-wide text-xl font-bold normal-case tracking-normal">{t("statsTrend")}</h3>
-        <div className="mt-6"><Curve /></div>
+        <div className="stats-chart mt-6"><Curve /></div>
       </div>
     </section>
   );
