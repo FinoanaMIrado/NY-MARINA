@@ -398,7 +398,7 @@ export function LanguageSelect({ className = "" }: { className?: string }) {
       </button>
       {open && (
         <div id={menuId} role="menu" aria-label={t("language")} className="language-picker-menu">
-          {options.map((option) => (
+          {options.map((option, index) => (
             <button
               key={option.value}
               type="button"
@@ -409,9 +409,10 @@ export function LanguageSelect({ className = "" }: { className?: string }) {
                 setOpen(false);
               }}
               className="language-picker-option"
+              style={{ animationDelay: `${index * 55}ms` }}
             >
               <span>{option.label}</span>
-              {language === option.value && <span aria-hidden="true">✓</span>}
+              {language === option.value && <span className="language-picker-check" aria-hidden="true">✓</span>}
             </button>
           ))}
         </div>
