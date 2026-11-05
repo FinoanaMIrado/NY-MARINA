@@ -76,22 +76,22 @@ function Dashboard() {
   const { t } = useLanguage();
   const [tab, setTab] = useState<"verifier" | "dossiers" | "stats">("verifier");
   return (
-    <main className={`flex min-h-screen bg-ink text-ink-foreground ${tab === "stats" ? "dashboard-stats-mode" : ""}`}>
-      <aside className="sticky top-0 flex h-screen w-64 shrink-0 flex-col gap-2 border-r border-ink-foreground/10 p-6">
-        <div className="space-y-5">
+    <main className={`flex min-h-screen flex-col bg-ink text-ink-foreground lg:flex-row ${tab === "stats" ? "dashboard-stats-mode" : ""}`}>
+      <aside className="z-30 flex h-auto w-full shrink-0 flex-col gap-3 border-b border-ink-foreground/10 p-4 sm:p-5 lg:sticky lg:top-0 lg:h-screen lg:w-64 lg:flex-col lg:gap-2 lg:border-b-0 lg:border-r lg:p-6">
+        <div className="flex items-center justify-between gap-4 lg:flex-col lg:items-stretch lg:gap-5">
           <Link to="/" aria-label="Ny Marina — accueil" className="block">
-            <img src="/icon.svg" alt="Ny Marina" className="h-auto w-full max-w-44 object-contain" />
+            <img src="/icon.svg" alt="Ny Marina" className="h-auto w-32 object-contain sm:w-40 lg:w-full lg:max-w-44" />
           </Link>
-          <LanguageSelect className="w-full" />
+          <LanguageSelect />
         </div>
-        <nav className="mt-10 space-y-2">
+        <nav className="-mx-1 flex gap-2 overflow-x-auto pb-1 lg:mx-0 lg:mt-10 lg:flex-col lg:overflow-visible lg:pb-0">
           {([["verifier", t("verifyTab")], ["dossiers", t("myChecks")], ["stats", t("statsTab")]] as const).map(([k, l]) => (
-            <button key={k} onClick={() => setTab(k)} className={`w-full rounded-2xl px-4 py-3 text-left font-display text-2xl transition ${tab === k ? "bg-primary text-primary-foreground" : "opacity-70 hover:bg-ink-soft hover:opacity-100"}`}>
+            <button key={k} onClick={() => setTab(k)} className={`shrink-0 rounded-xl px-3 py-2 text-left font-display text-lg transition sm:px-4 lg:w-full lg:rounded-2xl lg:py-3 lg:text-2xl ${tab === k ? "bg-primary text-primary-foreground" : "opacity-70 hover:bg-ink-soft hover:opacity-100"}`}>
               {l}
             </button>
           ))}
         </nav>
-        <Link to="/" className="mt-auto rounded-xl bg-ink-soft px-4 py-3 text-sm opacity-80 hover:opacity-100">{t("signOut")}</Link>
+        <Link to="/" className="ml-auto rounded-xl bg-ink-soft px-4 py-2 text-xs opacity-80 hover:opacity-100 lg:mt-auto">{t("signOut")}</Link>
       </aside>
       <div className={`flex-1 overflow-x-hidden ${tab === "stats" ? "dashboard-stats-content" : ""}`}>
         {tab === "verifier" ? <Verifier /> : tab === "dossiers" ? <Dossiers /> : <Stats />}

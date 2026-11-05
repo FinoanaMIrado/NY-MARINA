@@ -3,10 +3,10 @@ import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider 
 import { t as LanguageProvider } from "./i18n-BbklbTVS.mjs";
 import { _ as createFileRoute, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, x as useRouter, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DD2ujpG3.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BNbqB2sk.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-BFSVap5D.css";
+var styles_default = "/assets/styles-B9Oi5eVA.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -193,7 +193,7 @@ var Route$2 = createFileRoute("/")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./dashboard-BsV92mCZ.mjs");
+var $$splitComponentImporter$1 = () => import("./dashboard-CcQGjyw3.mjs");
 var Route$1 = createFileRoute("/dashboard")({
 	head: () => ({ meta: [
 		{ title: "Tableau de bord — Ny Marina" },
@@ -220,7 +220,7 @@ var Route$1 = createFileRoute("/dashboard")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./login-01PQ9Wb6.mjs");
+var $$splitComponentImporter = () => import("./login-BjOiO-lK.mjs");
 var Route = createFileRoute("/login")({
 	head: () => ({ meta: [
 		{ title: "Connexion journaliste — Ny Marina" },

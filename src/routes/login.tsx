@@ -28,17 +28,17 @@ function Login() {
   const field = "w-full rounded-2xl border border-ink-foreground/15 bg-ink px-5 py-4 text-sm outline-none placeholder:opacity-40 focus:border-primary";
 
   return (
-    <main className="min-h-screen bg-ink px-6 py-6 text-ink-foreground">
+    <main className="min-h-screen bg-ink px-4 py-5 text-ink-foreground sm:px-6 sm:py-6">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between gap-4">
           <Logo />
           <LanguageSelect />
         </div>
-        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
-          <h1 className="animate-rise text-7xl md:text-8xl">
+        <div className="mt-8 grid gap-8 sm:mt-12 sm:gap-10 lg:grid-cols-2 lg:items-center">
+          <h1 className="animate-rise text-6xl sm:text-7xl md:text-8xl">
             {t("loginTitle")} <span className="text-primary">{t("loginTitleHighlight")}</span>
           </h1>
-          <form onSubmit={submit} className="space-y-3 rounded-3xl bg-ink-soft p-6">
+          <form onSubmit={submit} className="space-y-3 rounded-3xl bg-ink-soft p-4 sm:p-6">
             <label className="block text-xs uppercase tracking-widest opacity-60">{t("email")}</label>
             <input type="email" placeholder={t("emailPlaceholder")} className={field} />
             <label className="block pt-2 text-xs uppercase tracking-widest opacity-60">{t("password")}</label>

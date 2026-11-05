@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { n as LanguageSelect, r as useLanguage } from "./i18n-BbklbTVS.mjs";
 import { a as verdictChip, i as Verifier, r as VerdictIcon } from "./brand-j52OpRNd.mjs";
 import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/dashboard-BsV92mCZ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/dashboard-CcQGjyw3.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var counts = {
@@ -148,7 +148,7 @@ function Stats() {
 				children: t("statsTab")
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "stats-cards mt-10 grid gap-5 md:grid-cols-4",
+				className: "stats-cards mt-10 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "stats-total-card notch animate-rise flex min-h-48 flex-col rounded-2xl bg-lime p-7 text-lime-foreground md:col-span-2",
@@ -204,7 +204,7 @@ function Stats() {
 						]
 					}, s)),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "stats-share-card animate-rise flex flex-col justify-center gap-3 rounded-2xl bg-ink-soft p-6",
+						className: "stats-share-card animate-rise col-span-2 flex flex-col justify-center gap-3 rounded-2xl bg-ink-soft p-6 md:col-span-1",
 						style: { animationDelay: "0.5s" },
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-xs uppercase opacity-60",
@@ -363,12 +363,12 @@ function Dashboard() {
 	const { t } = useLanguage();
 	const [tab, setTab] = (0, import_react.useState)("verifier");
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-		className: `flex min-h-screen bg-ink text-ink-foreground ${tab === "stats" ? "dashboard-stats-mode" : ""}`,
+		className: `flex min-h-screen flex-col bg-ink text-ink-foreground lg:flex-row ${tab === "stats" ? "dashboard-stats-mode" : ""}`,
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
-			className: "sticky top-0 flex h-screen w-64 shrink-0 flex-col gap-2 border-r border-ink-foreground/10 p-6",
+			className: "z-30 flex h-auto w-full shrink-0 flex-col gap-3 border-b border-ink-foreground/10 p-4 sm:p-5 lg:sticky lg:top-0 lg:h-screen lg:w-64 lg:flex-col lg:gap-2 lg:border-b-0 lg:border-r lg:p-6",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "space-y-5",
+					className: "flex items-center justify-between gap-4 lg:flex-col lg:items-stretch lg:gap-5",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 						to: "/",
 						"aria-label": "Ny Marina — accueil",
@@ -376,25 +376,25 @@ function Dashboard() {
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/icon.svg",
 							alt: "Ny Marina",
-							className: "h-auto w-full max-w-44 object-contain"
+							className: "h-auto w-32 object-contain sm:w-40 lg:w-full lg:max-w-44"
 						})
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, { className: "w-full" })]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, {})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
-					className: "mt-10 space-y-2",
+					className: "-mx-1 flex gap-2 overflow-x-auto pb-1 lg:mx-0 lg:mt-10 lg:flex-col lg:overflow-visible lg:pb-0",
 					children: [
 						["verifier", t("verifyTab")],
 						["dossiers", t("myChecks")],
 						["stats", t("statsTab")]
 					].map(([k, l]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						onClick: () => setTab(k),
-						className: `w-full rounded-2xl px-4 py-3 text-left font-display text-2xl transition ${tab === k ? "bg-primary text-primary-foreground" : "opacity-70 hover:bg-ink-soft hover:opacity-100"}`,
+						className: `shrink-0 rounded-xl px-3 py-2 text-left font-display text-lg transition sm:px-4 lg:w-full lg:rounded-2xl lg:py-3 lg:text-2xl ${tab === k ? "bg-primary text-primary-foreground" : "opacity-70 hover:bg-ink-soft hover:opacity-100"}`,
 						children: l
 					}, k))
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 					to: "/",
-					className: "mt-auto rounded-xl bg-ink-soft px-4 py-3 text-sm opacity-80 hover:opacity-100",
+					className: "ml-auto rounded-xl bg-ink-soft px-4 py-2 text-xs opacity-80 hover:opacity-100 lg:mt-auto",
 					children: t("signOut")
 				})
 			]

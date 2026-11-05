@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { n as LanguageSelect, r as useLanguage } from "./i18n-BbklbTVS.mjs";
 import { n as Logo, t as Arrow } from "./brand-j52OpRNd.mjs";
 import { b as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/login-01PQ9Wb6.js
+//#region node_modules/.nitro/vite/services/ssr/assets/login-BjOiO-lK.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function Login() {
@@ -16,16 +16,16 @@ function Login() {
 	};
 	const field = "w-full rounded-2xl border border-ink-foreground/15 bg-ink px-5 py-4 text-sm outline-none placeholder:opacity-40 focus:border-primary";
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
-		className: "min-h-screen bg-ink px-6 py-6 text-ink-foreground",
+		className: "min-h-screen bg-ink px-4 py-5 text-ink-foreground sm:px-6 sm:py-6",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-6xl",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center justify-between gap-4",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, {})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mt-12 grid gap-10 lg:grid-cols-2 lg:items-center",
+				className: "mt-8 grid gap-8 sm:mt-12 sm:gap-10 lg:grid-cols-2 lg:items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-					className: "animate-rise text-7xl md:text-8xl",
+					className: "animate-rise text-6xl sm:text-7xl md:text-8xl",
 					children: [
 						t("loginTitle"),
 						" ",
@@ -36,7 +36,7 @@ function Login() {
 					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
 					onSubmit: submit,
-					className: "space-y-3 rounded-3xl bg-ink-soft p-6",
+					className: "space-y-3 rounded-3xl bg-ink-soft p-4 sm:p-6",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 							className: "block text-xs uppercase tracking-widest opacity-60",

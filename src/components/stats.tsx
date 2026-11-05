@@ -56,7 +56,7 @@ export function Stats() {
     <section className="stats-page px-6 py-12">
       <h2 className="stats-page-title text-6xl text-ink-foreground md:text-7xl">{t("statsTab")}</h2>
 
-      <div className="stats-cards mt-10 grid gap-5 md:grid-cols-4">
+      <div className="stats-cards mt-10 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4">
         <div className="stats-total-card notch animate-rise flex min-h-48 flex-col rounded-2xl bg-lime p-7 text-lime-foreground md:col-span-2">
           <span className="text-xs uppercase opacity-70">{t("statsTotal")}</span>
           <span className="mt-auto font-wide text-8xl font-bold leading-none">{total}</span>
@@ -74,7 +74,7 @@ export function Stats() {
             <span className="text-xs opacity-70">{counts[s]} / {total}</span>
           </div>
         ))}
-        <div className="stats-share-card animate-rise flex flex-col justify-center gap-3 rounded-2xl bg-ink-soft p-6" style={{ animationDelay: "0.5s" }}>
+        <div className="stats-share-card animate-rise col-span-2 flex flex-col justify-center gap-3 rounded-2xl bg-ink-soft p-6 md:col-span-1" style={{ animationDelay: "0.5s" }}>
           <span className="text-xs uppercase opacity-60">{t("statsShare")}</span>
           <div className="flex h-4 overflow-hidden rounded-full">
             {order.map((s) => <div key={s} className={verdictChip[s]} style={{ width: `${pct(s)}%` }} />)}

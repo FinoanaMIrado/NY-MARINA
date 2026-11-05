@@ -444,3 +444,35 @@ main.bg-ink .rounded-2xl.bg-ink-soft:hover {
     max-height: 100%;
   }
 }
+
+@media (max-width: 1023px) {
+  .dashboard-stats-mode {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .dashboard-stats-content {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .dashboard-stats-content .stats-page {
+    min-height: calc(100dvh - 11rem);
+    padding: 1.5rem 1rem;
+  }
+
+  .dashboard-stats-content .stats-cards {
+    margin-top: 1.5rem;
+  }
+
+  .dashboard-stats-content .stats-trend-card {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  .dashboard-stats-content .stats-chart-svg {
+    min-height: 12rem;
+  }
+}
