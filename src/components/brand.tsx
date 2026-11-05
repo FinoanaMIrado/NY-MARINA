@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 export function Arrow({ className = "" }: { className?: string }) {
   return (
@@ -52,6 +53,7 @@ function Gauge({ score }: { score: number }) {
 }
 
 export function Verifier() {
+  const { t } = useLanguage();
   const [mode, setMode] = useState<"url" | "image">("url");
   const [url, setUrl] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -71,17 +73,17 @@ export function Verifier() {
   };
 
   const verdict = (s: number) =>
-    s >= 70 ? "Information plutôt fiable" : s >= 40 ? "Information à prendre avec prudence" : "Information probablement trompeuse";
+    s >= 70 ? t("likelyReliable") : s >= 40 ? t("useCaution") : t("likelyMisleading");
 
   return (
     <section id="verifier" className="bg-ink px-6 py-24 text-ink-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
         <div>
           <h2 className="text-6xl md:text-7xl">
-            Vérifiez <span className="text-sun">maintenant</span>,<br />partagez ensuite
+            {t("verifyNow")}<br /><span className="text-sun">{t("shareLater")}</span>
           </h2>
           <p className="mt-6 max-w-md text-sm leading-relaxed opacity-70">
-            Collez un lien d'article ou de publication, ou importez une capture d'écran. Aucun compte n'est nécessaire.
+            {t("verifyIntro")}
           </p>
 
           <form onSubmit={submit} className="mt-10 rounded-3xl bg-ink-soft p-3">
@@ -93,7 +95,7 @@ export function Verifier() {
                   onClick={() => setMode(m)}
                   className={`rounded-2xl py-3 text-sm font-medium transition ${mode === m ? "bg-ink-foreground text-ink" : "opacity-70 hover:opacity-100"}`}
                 >
-                  {m === "url" ? "Lien URL" : "Capture d'écran"}
+                  {m === "url" ? t("urlSource") : t("screenshot")}
                 </button>
               ))}
             </div>
@@ -108,8 +110,8 @@ export function Verifier() {
                 />
               ) : (
                 <label className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-ink-foreground/20 bg-ink px-5 py-8 text-center text-sm hover:border-primary">
-                  <span className="font-display text-2xl">{file ? file.name : "Déposez votre image"}</span>
-                  <span className="mt-1 opacity-50">PNG, JPG — capture d'écran</span>
+                  <span className="font-display text-2xl">{file ? file.name : t("dropImage")}</span>
+                  <span className="mt-1 opacity-50">{t("screenshotFormats")}</span>
                   <input type="file" accept="image/*" className="hidden" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
                 </label>
               )}
@@ -117,7 +119,7 @@ export function Verifier() {
                 disabled={loading}
                 className="mt-3 flex w-full items-center justify-between rounded-2xl bg-primary px-6 py-4 font-display text-2xl text-primary-foreground transition hover:brightness-110 disabled:opacity-60"
               >
-                {loading ? "Analyse en cours…" : "Lancer la vérification"}
+                {loading ? t("analyzing") : t("startVerification")}
                 <Arrow className="h-7 w-7" />
               </button>
             </div>
@@ -127,9 +129,9 @@ export function Verifier() {
         <div className="flex min-h-[420px] flex-col justify-center rounded-3xl bg-ink-soft p-8">
           {loading && (
             <ul className="space-y-4 font-display text-3xl">
-              {["Extraction du contenu", "Recherche de sources", "Analyse par l'IA"].map((t, i) => (
-                <li key={t} className="animate-rise flex items-center gap-3" style={{ animationDelay: `${i * 0.4}s` }}>
-                  <span className="h-3 w-3 animate-pulse rounded-full bg-primary" /> {t}
+              {[t("extracting"), t("searchingSources"), t("analyzingWithAi")].map((step, i) => (
+                <li key={step} className="animate-rise flex items-center gap-3" style={{ animationDelay: `${i * 0.4}s` }}>
+                  <span className="h-3 w-3 animate-pulse rounded-full bg-primary" /> {step}
                 </li>
               ))}
             </ul>
@@ -137,7 +139,7 @@ export function Verifier() {
           {!loading && !result && (
             <div className="text-center">
               <div className="font-display text-8xl text-sun">?%</div>
-              <p className="mt-4 text-sm opacity-60">Votre résultat apparaîtra ici.</p>
+              <p className="mt-4 text-sm opacity-60">{t("resultPlaceholder")}</p>
             </div>
           )}
           {result && (
@@ -145,11 +147,10 @@ export function Verifier() {
               <Gauge score={result.score} />
               <h3 className="mt-6 text-center text-4xl">{verdict(result.score)}</h3>
               <p className="mt-4 text-sm leading-relaxed opacity-70">
-                Justification (exemple) : plusieurs sources consultées ont été comparées. Certaines confirment les faits principaux, d'autres
-                apportent des nuances sur les chiffres avancés.
+                {t("sampleJustification")}
               </p>
-              <p className="mt-4 truncate text-xs opacity-40">Source analysée : {result.source}</p>
-              <p className="mt-2 text-xs opacity-40">Ce pourcentage est une estimation, pas une garantie.</p>
+              <p className="mt-4 truncate text-xs opacity-40">{t("analyzedSource")} {result.source}</p>
+              <p className="mt-2 text-xs opacity-40">{t("scoreDisclaimer")}</p>
             </div>
           )}
         </div>
@@ -180,4 +181,3 @@ export function VerdictIcon({ s, className = "h-5 w-5" }: { s: Verdict; classNam
     </svg>
   );
 }
-
