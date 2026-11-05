@@ -19,79 +19,79 @@ var public_assets_data_default = {
 	"/icon.svg": {
 		"type": "image/svg+xml",
 		"etag": "\"86f0-XZpT/F5hCTUJlUYylD4LXLg6KaM\"",
-		"mtime": "2026-11-05T16:57:12.262Z",
+		"mtime": "2026-11-05T17:07:14.107Z",
 		"size": 34544,
 		"path": "../public/icon.svg"
 	},
 	"/robots.txt": {
 		"type": "text/plain; charset=utf-8",
 		"etag": "\"a0-CKGXSIe7TSsqDTmGm/nY1t/o5d0\"",
-		"mtime": "2026-11-05T16:57:12.262Z",
+		"mtime": "2026-11-05T17:07:14.115Z",
 		"size": 160,
 		"path": "../public/robots.txt"
 	},
-	"/assets/brand-DNkXPoKm.js": {
+	"/assets/dashboard-DSrIzeZA.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"16a2-y0LGj0LekeMXUiLZGExCTKVl4Dw\"",
-		"mtime": "2026-11-05T16:57:09.407Z",
+		"etag": "\"2852-in5Osm5GBoMzK11aLa17yCNRysg\"",
+		"mtime": "2026-11-05T17:07:11.645Z",
+		"size": 10322,
+		"path": "../public/assets/dashboard-DSrIzeZA.js"
+	},
+	"/assets/brand-CIUo0w63.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"16a2-/vmJ0p6/0RRqtIdzo/QolJo1Tcw\"",
+		"mtime": "2026-11-05T17:07:11.645Z",
 		"size": 5794,
-		"path": "../public/assets/brand-DNkXPoKm.js"
+		"path": "../public/assets/brand-CIUo0w63.js"
+	},
+	"/assets/i18n-HEq6zmRQ.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"63a4-Jqi/jPy2y3DxMkm/krAoHE7kLBE\"",
+		"mtime": "2026-11-05T17:07:11.645Z",
+		"size": 25508,
+		"path": "../public/assets/i18n-HEq6zmRQ.js"
 	},
 	"/assets/crowd-CIaK49eW.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"307ec-hs/ttudWMr0x86EcHKSV1oGIPkI\"",
-		"mtime": "2026-11-05T16:57:09.407Z",
+		"mtime": "2026-11-05T17:07:11.645Z",
 		"size": 198636,
 		"path": "../public/assets/crowd-CIaK49eW.jpg"
 	},
-	"/assets/dashboard-DwbVtqJ5.js": {
+	"/assets/index-DpNJFUSX.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"282d-467GNKeaVhOBPOLXYTjhepw9f5w\"",
-		"mtime": "2026-11-05T16:57:09.407Z",
-		"size": 10285,
-		"path": "../public/assets/dashboard-DwbVtqJ5.js"
+		"etag": "\"5840b-D5jEMy/UsOXzqZsyUoAhLvXNtGc\"",
+		"mtime": "2026-11-05T17:07:11.644Z",
+		"size": 361483,
+		"path": "../public/assets/index-DpNJFUSX.js"
 	},
-	"/assets/i18n-DhTZvldk.js": {
+	"/assets/login-BHesGJgX.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5fee-iTZUB+l2N/wDPcZAU8/xxioO7P4\"",
-		"mtime": "2026-11-05T16:57:09.407Z",
-		"size": 24558,
-		"path": "../public/assets/i18n-DhTZvldk.js"
-	},
-	"/assets/login-BmM3fh4l.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"a38-x2pB//jl3FCIz9a+P1XlLN7owo8\"",
-		"mtime": "2026-11-05T16:57:09.407Z",
+		"etag": "\"a38-u1ZDS0aYUnSpeQUmgtAaoHvKsvM\"",
+		"mtime": "2026-11-05T17:07:11.645Z",
 		"size": 2616,
-		"path": "../public/assets/login-BmM3fh4l.js"
+		"path": "../public/assets/login-BHesGJgX.js"
 	},
-	"/assets/routes-CRnJts8J.js": {
+	"/assets/routes-c2ETYfS2.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"2956-862eStw1V/u6hdGQLgQ6hlOQgRc\"",
-		"mtime": "2026-11-05T16:57:09.407Z",
+		"etag": "\"2956-GQRkbnnVFH+0GHZ6rxlnfLHmI58\"",
+		"mtime": "2026-11-05T17:07:11.645Z",
 		"size": 10582,
-		"path": "../public/assets/routes-CRnJts8J.js"
+		"path": "../public/assets/routes-c2ETYfS2.js"
 	},
 	"/assets/strip-DWtm68YR.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"19cca-XfppJAk0dBpTdvheN6hMCM3/mpU\"",
-		"mtime": "2026-11-05T16:57:09.408Z",
+		"mtime": "2026-11-05T17:07:11.646Z",
 		"size": 105674,
 		"path": "../public/assets/strip-DWtm68YR.jpg"
 	},
-	"/assets/styles-CA8-igpt.css": {
+	"/assets/styles-CKNPpxUI.css": {
 		"type": "text/css; charset=utf-8",
-		"etag": "\"160a0-QmKSUnGLGVqtRIgKO6sS84rHrio\"",
-		"mtime": "2026-11-05T16:57:09.408Z",
-		"size": 90272,
-		"path": "../public/assets/styles-CA8-igpt.css"
-	},
-	"/assets/index-CUTs6HYa.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5840b-MnPJ8n2bbUgZAbH4k/afsWolqjA\"",
-		"mtime": "2026-11-05T16:57:09.405Z",
-		"size": 361483,
-		"path": "../public/assets/index-CUTs6HYa.js"
+		"etag": "\"1653e-Zpnj/UacQQlszPMIX0q+WHB8zf0\"",
+		"mtime": "2026-11-05T17:07:11.646Z",
+		"size": 91454,
+		"path": "../public/assets/styles-CKNPpxUI.css"
 	}
 };
 //#endregion

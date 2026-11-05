@@ -1,9 +1,9 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { n as LanguageSelect, r as useLanguage } from "./i18n-DZ_Q7JQs.mjs";
-import { a as verdictChip, i as Verifier, r as VerdictIcon } from "./brand-liNQl9SW.mjs";
+import { n as LanguageSelect, r as useLanguage } from "./i18n-Dlkp32Hu.mjs";
+import { a as verdictChip, i as Verifier, r as VerdictIcon } from "./brand-DubX2J3W.mjs";
 import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/dashboard-BUeU9wLz.js
+//#region node_modules/.nitro/vite/services/ssr/assets/dashboard-DpSAdMmF.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var counts = {
@@ -151,7 +151,7 @@ function Stats() {
 				className: "stats-cards mt-10 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "stats-total-card notch animate-rise flex min-h-48 flex-col rounded-2xl bg-lime p-7 text-lime-foreground md:col-span-2",
+						className: "stats-total-card notch animate-rise col-span-2 flex min-h-48 flex-col rounded-2xl bg-lime p-7 text-lime-foreground md:col-span-2",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-xs uppercase opacity-70",
 							children: t("statsTotal")
@@ -161,7 +161,7 @@ function Stats() {
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "stats-total-card notch animate-rise flex min-h-48 flex-col rounded-2xl bg-card p-7 text-card-foreground md:col-span-2",
+						className: "stats-total-card notch animate-rise col-span-2 flex min-h-48 flex-col rounded-2xl bg-card p-7 text-card-foreground md:col-span-2",
 						style: { animationDelay: "0.1s" },
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-xs uppercase opacity-70",
@@ -471,7 +471,7 @@ function Dashboard() {
 				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: `flex-1 overflow-x-hidden ${tab === "stats" ? "dashboard-stats-content" : ""}`,
+				className: `w-full min-w-0 flex-1 overflow-x-hidden ${tab === "stats" ? "dashboard-stats-content" : ""}`,
 				children: tab === "verifier" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Verifier, {}) : tab === "dossiers" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dossiers, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stats, {})
 			})
 		]

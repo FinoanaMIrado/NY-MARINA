@@ -534,3 +534,43 @@ main.bg-ink .rounded-2xl.bg-ink-soft:hover {
   .dashboard-mobile-menu-item:hover {
     transform: translateX(-6px);
   }
+
+  .language-picker-menu {
+    position: absolute;
+    top: calc(100% + .55rem);
+    right: 0;
+    z-index: 60;
+    min-width: 10rem;
+    overflow: hidden;
+    border: 1px solid oklch(0.9 0.003 90);
+    border-radius: 1rem;
+    background: white;
+    padding: .35rem;
+    color: oklch(0.18 0 0);
+    box-shadow: 0 16px 40px oklch(0 0 0 / .24);
+    transform-origin: top right;
+    animation: dashboard-menu-enter .22s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  .language-picker-option {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: .7rem;
+    padding: .7rem .8rem;
+    text-align: left;
+    transition: background-color .18s ease, color .18s ease;
+  }
+
+  .language-picker-option:hover,
+  .language-picker-option:focus-visible {
+    background: var(--lime);
+    color: var(--lime-foreground);
+    outline: none;
+  }
+
+  .language-picker-option[aria-checked="true"] {
+    font-weight: 700;
+  }

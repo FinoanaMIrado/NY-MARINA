@@ -1,6 +1,8 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { jsx, jsxs } from "react/jsx-runtime";
-//#region src/lib/i18n.tsx
+import { n as __toESM } from "../_runtime.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/i18n-Dlkp32Hu.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
 var languages = [
 	"mg",
 	"fr",
@@ -299,67 +301,116 @@ var messages = {
 		scoreDisclaimer: "This percentage is an estimate, not a guarantee."
 	}
 };
-var LanguageContext = createContext(null);
+var LanguageContext = (0, import_react.createContext)(null);
 function isLanguage(value) {
 	return value !== null && languages.some((language) => language === value);
 }
 function LanguageProvider({ children }) {
-	const [language, setLanguageState] = useState("fr");
-	const [hasLoadedPreference, setHasLoadedPreference] = useState(false);
-	useEffect(() => {
+	const [language, setLanguageState] = (0, import_react.useState)("fr");
+	const [hasLoadedPreference, setHasLoadedPreference] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
 		const savedLanguage = window.localStorage.getItem("ny-marina-language");
 		if (isLanguage(savedLanguage)) setLanguageState(savedLanguage);
 		setHasLoadedPreference(true);
 	}, []);
-	useEffect(() => {
+	(0, import_react.useEffect)(() => {
 		if (!hasLoadedPreference) return;
 		document.documentElement.lang = language;
 		window.localStorage.setItem("ny-marina-language", language);
 	}, [hasLoadedPreference, language]);
-	const value = useMemo(() => ({
+	const value = (0, import_react.useMemo)(() => ({
 		language,
 		setLanguage: setLanguageState,
 		t: (key) => messages[language][key]
 	}), [language]);
-	return /* @__PURE__ */ jsx(LanguageContext.Provider, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageContext.Provider, {
 		value,
 		children
 	});
 }
 function useLanguage() {
-	const context = useContext(LanguageContext);
+	const context = (0, import_react.useContext)(LanguageContext);
 	if (!context) throw new Error("useLanguage must be used within a LanguageProvider");
 	return context;
 }
 function LanguageSelect({ className = "" }) {
 	const { language, setLanguage, t } = useLanguage();
-	return /* @__PURE__ */ jsxs("label", {
-		className: `inline-flex items-center gap-2 text-sm ${className}`,
-		children: [/* @__PURE__ */ jsx("span", {
-			className: "sr-only",
-			children: t("language")
-		}), /* @__PURE__ */ jsxs("select", {
+	const [open, setOpen] = (0, import_react.useState)(false);
+	const rootRef = (0, import_react.useRef)(null);
+	const menuId = (0, import_react.useId)();
+	const options = [
+		{
+			value: "mg",
+			label: "Malagasy"
+		},
+		{
+			value: "fr",
+			label: "Français"
+		},
+		{
+			value: "en",
+			label: "English"
+		}
+	];
+	const selectedLabel = options.find((option) => option.value === language)?.label ?? "Français";
+	(0, import_react.useEffect)(() => {
+		if (!open) return;
+		const closeOnOutsideClick = (event) => {
+			if (event.target instanceof Node && !rootRef.current?.contains(event.target)) setOpen(false);
+		};
+		const closeOnEscape = (event) => {
+			if (event.key === "Escape") setOpen(false);
+		};
+		document.addEventListener("pointerdown", closeOnOutsideClick);
+		document.addEventListener("keydown", closeOnEscape);
+		return () => {
+			document.removeEventListener("pointerdown", closeOnOutsideClick);
+			document.removeEventListener("keydown", closeOnEscape);
+		};
+	}, [open]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		ref: rootRef,
+		className: `language-picker relative inline-flex text-sm ${className}`,
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+			type: "button",
 			"aria-label": t("language"),
-			value: language,
-			onChange: (event) => setLanguage(event.target.value),
-			className: "cursor-pointer rounded-xl border border-current/20 bg-transparent px-3 py-2 text-current outline-none transition hover:bg-current/10 focus-visible:ring-2 focus-visible:ring-primary",
-			children: [
-				/* @__PURE__ */ jsx("option", {
-					value: "mg",
-					className: "bg-background text-foreground",
-					children: "Malagasy"
-				}),
-				/* @__PURE__ */ jsx("option", {
-					value: "fr",
-					className: "bg-background text-foreground",
-					children: "Français"
-				}),
-				/* @__PURE__ */ jsx("option", {
-					value: "en",
-					className: "bg-background text-foreground",
-					children: "English"
+			"aria-haspopup": "menu",
+			"aria-expanded": open,
+			"aria-controls": menuId,
+			onClick: () => setOpen((isOpen) => !isOpen),
+			className: "inline-flex cursor-pointer items-center gap-2 rounded-xl border border-current/20 bg-transparent px-3 py-2 text-current outline-none transition hover:bg-current/10 focus-visible:ring-2 focus-visible:ring-primary",
+			children: [selectedLabel, /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+				"aria-hidden": "true",
+				viewBox: "0 0 16 16",
+				className: `h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`,
+				fill: "none",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+					d: "m3.5 6 4.5 4 4.5-4",
+					stroke: "currentColor",
+					strokeWidth: "1.5",
+					strokeLinecap: "round",
+					strokeLinejoin: "round"
 				})
-			]
+			})]
+		}), open && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			id: menuId,
+			role: "menu",
+			"aria-label": t("language"),
+			className: "language-picker-menu",
+			children: options.map((option) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+				type: "button",
+				role: "menuitemradio",
+				"aria-checked": language === option.value,
+				onClick: () => {
+					setLanguage(option.value);
+					setOpen(false);
+				},
+				className: "language-picker-option",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: option.label }), language === option.value && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					"aria-hidden": "true",
+					children: "✓"
+				})]
+			}, option.value))
 		})]
 	});
 }

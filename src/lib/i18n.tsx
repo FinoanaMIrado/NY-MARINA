@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useId, useMemo, useRef, useState, type ReactNode } from "react";
 
 export const languages = ["mg", "fr", "en"] as const;
 export type Language = (typeof languages)[number];
@@ -347,20 +347,75 @@ export function useLanguage() {
 
 export function LanguageSelect({ className = "" }: { className?: string }) {
   const { language, setLanguage, t } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const menuId = useId();
+  const options: { value: Language; label: string }[] = [
+    { value: "mg", label: "Malagasy" },
+    { value: "fr", label: "Français" },
+    { value: "en", label: "English" },
+  ];
+  const selectedLabel = options.find((option) => option.value === language)?.label ?? "Français";
+
+  useEffect(() => {
+    if (!open) return;
+
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (event.target instanceof Node && !rootRef.current?.contains(event.target)) setOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
 
   return (
-    <label className={`inline-flex items-center gap-2 text-sm ${className}`}>
-      <span className="sr-only">{t("language")}</span>
-      <select
+    <div ref={rootRef} className={`language-picker relative inline-flex text-sm ${className}`}>
+      <button
+        type="button"
         aria-label={t("language")}
-        value={language}
-        onChange={(event) => setLanguage(event.target.value as Language)}
-        className="cursor-pointer rounded-xl border border-current/20 bg-transparent px-3 py-2 text-current outline-none transition hover:bg-current/10 focus-visible:ring-2 focus-visible:ring-primary"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls={menuId}
+        onClick={() => setOpen((isOpen) => !isOpen)}
+        className="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-current/20 bg-transparent px-3 py-2 text-current outline-none transition hover:bg-current/10 focus-visible:ring-2 focus-visible:ring-primary"
       >
-        <option value="mg" className="bg-background text-foreground">Malagasy</option>
-        <option value="fr" className="bg-background text-foreground">Français</option>
-        <option value="en" className="bg-background text-foreground">English</option>
-      </select>
-    </label>
+        {selectedLabel}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 16 16"
+          className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`}
+          fill="none"
+        >
+          <path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      {open && (
+        <div id={menuId} role="menu" aria-label={t("language")} className="language-picker-menu">
+          {options.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              role="menuitemradio"
+              aria-checked={language === option.value}
+              onClick={() => {
+                setLanguage(option.value);
+                setOpen(false);
+              }}
+              className="language-picker-option"
+            >
+              <span>{option.label}</span>
+              {language === option.value && <span aria-hidden="true">✓</span>}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

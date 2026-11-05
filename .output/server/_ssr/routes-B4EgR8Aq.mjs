@@ -1,9 +1,11 @@
-import { n as LanguageSelect, r as useLanguage } from "./i18n-DZ_Q7JQs.js";
-import { a as verdictChip, r as VerdictIcon, t as Arrow } from "./brand-liNQl9SW.js";
-import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
-import { jsx, jsxs } from "react/jsx-runtime";
-//#region src/components/loupe.tsx
+import { n as __toESM } from "../_runtime.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { n as LanguageSelect, r as useLanguage } from "./i18n-Dlkp32Hu.mjs";
+import { a as verdictChip, r as VerdictIcon, t as Arrow } from "./brand-DubX2J3W.mjs";
+import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B4EgR8Aq.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
 /**
 * Curseur "loupe de recherche" : une lentille qui suit la souris et
 * affiche le contenu en dessous en couleurs inversées.
@@ -11,11 +13,11 @@ import { jsx, jsxs } from "react/jsx-runtime";
 */
 var SIZE = 120;
 function Loupe() {
-	const ref = useRef(null);
-	const [enabled, setEnabled] = useState(false);
-	const [visible, setVisible] = useState(false);
-	const [pressed, setPressed] = useState(false);
-	useEffect(() => {
+	const ref = (0, import_react.useRef)(null);
+	const [enabled, setEnabled] = (0, import_react.useState)(false);
+	const [visible, setVisible] = (0, import_react.useState)(false);
+	const [pressed, setPressed] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
 		if (!window.matchMedia("(pointer: fine)").matches) return;
 		setEnabled(true);
 		document.documentElement.classList.add("loupe-active");
@@ -49,7 +51,7 @@ function Loupe() {
 		};
 	}, []);
 	if (!enabled) return null;
-	return /* @__PURE__ */ jsxs("div", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		ref,
 		"aria-hidden": true,
 		className: "loupe",
@@ -59,17 +61,11 @@ function Loupe() {
 			width: SIZE,
 			height: SIZE
 		},
-		children: [/* @__PURE__ */ jsx("div", { className: "loupe-lens" }), /* @__PURE__ */ jsx("div", { className: "loupe-handle" })]
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "loupe-lens" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "loupe-handle" })]
 	});
 }
-//#endregion
-//#region src/assets/crowd.jpg
 var crowd_default = "/assets/crowd-CIaK49eW.jpg";
-//#endregion
-//#region src/assets/strip.jpg
 var strip_default = "/assets/strip-DWtm68YR.jpg";
-//#endregion
-//#region src/routes/index.tsx?tsr-split=component
 var chip = (s) => verdictChip[s];
 function Index() {
 	const { t } = useLanguage();
@@ -142,49 +138,49 @@ function Index() {
 			score: 48
 		}
 	];
-	return /* @__PURE__ */ jsxs("main", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
 		className: "min-h-screen bg-background",
 		children: [
-			/* @__PURE__ */ jsx(Loupe, {}),
-			/* @__PURE__ */ jsxs("section", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Loupe, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "bg-ink text-ink-foreground",
 				children: [
-					/* @__PURE__ */ jsxs("nav", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
 						className: "mx-auto flex max-w-6xl items-center justify-between px-6 py-6",
 						children: [
-							/* @__PURE__ */ jsx(Link, {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 								to: "/",
 								"aria-label": "Ny Marina — accueil",
 								className: "block",
-								children: /* @__PURE__ */ jsx("img", {
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 									src: "/icon.svg",
 									alt: "Ny Marina",
 									className: "h-auto w-36 object-contain sm:w-44"
 								})
 							}),
-							/* @__PURE__ */ jsxs("div", {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "hidden items-center gap-10 text-sm md:flex",
 								children: [
-									/* @__PURE__ */ jsx("a", {
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 										href: "#comment",
 										className: "opacity-80 hover:opacity-100",
 										children: t("howItWorksNav")
 									}),
-									/* @__PURE__ */ jsx("a", {
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 										href: "#pourquoi",
 										className: "opacity-80 hover:opacity-100",
 										children: t("whyNav")
 									}),
-									/* @__PURE__ */ jsx("a", {
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 										href: "#repere",
 										className: "opacity-80 hover:opacity-100",
 										children: t("detectNav")
 									})
 								]
 							}),
-							/* @__PURE__ */ jsxs("div", {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-center gap-3",
-								children: [/* @__PURE__ */ jsx(LanguageSelect, { className: "hidden sm:inline-flex" }), /* @__PURE__ */ jsx(Link, {
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, { className: "hidden sm:inline-flex" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 									to: "/login",
 									className: "rounded-xl bg-ink-foreground px-5 py-3 text-sm font-medium text-ink hover:bg-primary hover:text-primary-foreground",
 									children: t("journalistSpace")
@@ -192,57 +188,57 @@ function Index() {
 							})
 						]
 					}),
-					/* @__PURE__ */ jsx("div", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mx-auto max-w-6xl px-6 pb-2 sm:hidden",
-						children: /* @__PURE__ */ jsx(LanguageSelect, {})
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, {})
 					}),
-					/* @__PURE__ */ jsxs("div", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "mx-auto max-w-6xl px-6 pb-20 pt-12",
-						children: [/* @__PURE__ */ jsxs("h1", {
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
 							className: "animate-rise text-[13vw] leading-[0.85] md:text-[8.5rem]",
 							children: [
-								/* @__PURE__ */ jsxs("span", {
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 									className: "flex flex-wrap items-center gap-4",
-									children: [t("heroLine1"), /* @__PURE__ */ jsx("img", {
+									children: [t("heroLine1"), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 										src: strip_default,
 										alt: "",
 										className: "hidden h-[0.8em] w-[2.2em] rounded-2xl object-cover md:block"
 									})]
 								}),
-								/* @__PURE__ */ jsxs("span", {
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 									className: "flex flex-wrap items-center gap-4",
-									children: [/* @__PURE__ */ jsx("img", {
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 										src: crowd_default,
 										alt: "",
 										className: "hidden h-[0.8em] w-[2.6em] rounded-2xl object-cover md:block"
 									}), t("heroLine2")]
 								}),
-								/* @__PURE__ */ jsxs("span", {
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 									className: "flex flex-wrap items-center gap-4",
 									children: [
-										/* @__PURE__ */ jsxs("span", {
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 											className: "hidden h-[0.8em] w-[0.6em] flex-col justify-between rounded-2xl bg-accent p-2 md:flex",
-											children: [/* @__PURE__ */ jsx("span", { className: "h-1/2 w-full rounded-lg bg-ink" }), /* @__PURE__ */ jsx("span", { className: "aspect-square w-full rounded-full bg-primary" })]
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-1/2 w-full rounded-lg bg-ink" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "aspect-square w-full rounded-full bg-primary" })]
 										}),
 										t("heroLine3"),
-										/* @__PURE__ */ jsx("a", {
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 											href: "#repere",
 											className: "flex h-[0.8em] w-[0.8em] items-center justify-center rounded-2xl bg-primary text-primary-foreground transition hover:rotate-[-45deg]",
-											children: /* @__PURE__ */ jsx(Arrow, { className: "h-1/2 w-1/2" })
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, { className: "h-1/2 w-1/2" })
 										})
 									]
 								})
 							]
-						}), /* @__PURE__ */ jsxs("div", {
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "mt-10 flex flex-col justify-between gap-6 text-sm md:flex-row",
-							children: [/* @__PURE__ */ jsx("p", {
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "max-w-lg leading-relaxed opacity-70",
 								children: t("heroDescription")
-							}), /* @__PURE__ */ jsxs("p", {
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 								className: "text-right opacity-70",
 								children: [
 									t("verificationLabel"),
-									/* @__PURE__ */ jsx("br", {}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
 									t("madeInMadagascar")
 								]
 							})]
@@ -250,21 +246,21 @@ function Index() {
 					})
 				]
 			}),
-			/* @__PURE__ */ jsxs("section", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				id: "pourquoi",
 				className: "mx-auto max-w-6xl px-6 py-24",
 				children: [
-					/* @__PURE__ */ jsxs("div", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "grid gap-8 md:grid-cols-[1.4fr_1fr]",
-						children: [/* @__PURE__ */ jsxs("h2", {
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
 							className: "text-5xl md:text-6xl",
-							children: [t("introTitle"), /* @__PURE__ */ jsx(Arrow, { className: "ml-3 inline h-12 w-12 text-primary" })]
-						}), /* @__PURE__ */ jsx("p", {
+							children: [t("introTitle"), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, { className: "ml-3 inline h-12 w-12 text-primary" })]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-sm leading-relaxed text-muted-foreground",
 							children: t("introDescription")
 						})]
 					}),
-					/* @__PURE__ */ jsx("img", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: crowd_default,
 						alt: t("crowdAlt"),
 						width: 1600,
@@ -272,19 +268,19 @@ function Index() {
 						loading: "lazy",
 						className: "mt-12 w-full rounded-3xl object-cover"
 					}),
-					/* @__PURE__ */ jsx("div", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mt-4 grid grid-cols-2 gap-4 md:grid-cols-4",
 						children: [
 							["2", t("sourceTypes")],
 							["0", t("accountRequired")],
 							["100%", t("free")],
 							["~30s", t("perAnalysis")]
-						].map(([v, l]) => /* @__PURE__ */ jsxs("div", {
+						].map(([v, l]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center gap-4 rounded-2xl bg-ink px-6 py-5 text-ink-foreground",
-							children: [/* @__PURE__ */ jsx("span", {
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "font-display text-5xl",
 								children: v
-							}), /* @__PURE__ */ jsx("span", {
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "text-xs leading-tight opacity-70",
 								children: l
 							})]
@@ -292,125 +288,125 @@ function Index() {
 					})
 				]
 			}),
-			/* @__PURE__ */ jsxs("section", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				id: "comment",
 				className: "mx-auto max-w-6xl px-6 pb-24",
-				children: [/* @__PURE__ */ jsxs("div", {
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "grid gap-8 md:grid-cols-[1.4fr_1fr]",
-					children: [/* @__PURE__ */ jsx("h2", {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						className: "text-5xl md:text-6xl",
 						children: t("howItWorksTitle")
-					}), /* @__PURE__ */ jsx("p", {
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-sm leading-relaxed text-muted-foreground",
 						children: t("stepsIntro")
 					})]
-				}), /* @__PURE__ */ jsx("div", {
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mt-12 grid gap-4 md:grid-cols-4",
-					children: steps.map((s, i) => /* @__PURE__ */ jsxs("div", {
+					children: steps.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: `flex min-h-64 flex-col justify-between rounded-3xl p-6 ${i === 3 ? "bg-primary text-primary-foreground" : "bg-card"}`,
-						children: [/* @__PURE__ */ jsx("span", {
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "font-display text-xl opacity-50",
 							children: s.n
-						}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 							className: "text-4xl",
 							children: s.title
-						}), /* @__PURE__ */ jsx("p", {
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: `mt-3 text-sm leading-relaxed ${i === 3 ? "opacity-90" : "text-muted-foreground"}`,
 							children: s.description
 						})] })]
 					}, s.n))
 				})]
 			}),
-			/* @__PURE__ */ jsx("section", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 				id: "repere",
 				className: "bg-ink px-6 py-24 text-ink-foreground",
-				children: /* @__PURE__ */ jsxs("div", {
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mx-auto grid max-w-6xl gap-14 lg:grid-cols-[1.05fr_1fr]",
-					children: [/* @__PURE__ */ jsxs("div", { children: [
-						/* @__PURE__ */ jsx("h2", {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 							className: "text-6xl md:text-7xl",
 							children: t("whatWeDetect")
 						}),
-						/* @__PURE__ */ jsx("p", {
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "mt-6 max-w-md text-sm leading-relaxed opacity-70",
 							children: t("detectIntro")
 						}),
-						/* @__PURE__ */ jsx("ul", {
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 							className: "mt-12 divide-y divide-ink-foreground/10 border-y border-ink-foreground/10",
-							children: detects.map((d) => /* @__PURE__ */ jsxs("li", {
+							children: detects.map((d) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 								className: "group flex items-start gap-6 py-6",
 								children: [
-									/* @__PURE__ */ jsx("span", {
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 										className: "font-wide pt-1 text-lg font-medium opacity-40",
 										children: d.n
 									}),
-									/* @__PURE__ */ jsxs("div", {
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										className: "flex-1",
-										children: [/* @__PURE__ */ jsx("h3", {
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 											className: "text-3xl transition-colors group-hover:text-primary",
 											children: d.title
-										}), /* @__PURE__ */ jsx("p", {
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "mt-2 text-sm leading-relaxed opacity-60",
 											children: d.description
 										})]
 									}),
-									/* @__PURE__ */ jsx(Arrow, { className: "mt-1 h-6 w-6 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" })
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, { className: "mt-1 h-6 w-6 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" })
 								]
 							}, d.n))
 						})
-					] }), /* @__PURE__ */ jsxs("div", {
+					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "rounded-3xl bg-ink-soft p-6 md:p-8",
 						children: [
-							/* @__PURE__ */ jsxs("div", {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-baseline justify-between gap-4",
-								children: [/* @__PURE__ */ jsx("h3", {
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 									className: "font-wide text-sm font-semibold",
 									children: t("latestCases")
-								}), /* @__PURE__ */ jsx("span", {
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 									className: "text-xs opacity-50",
 									children: t("examples")
 								})]
 							}),
-							/* @__PURE__ */ jsx("div", {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "mt-6 space-y-4",
-								children: previews.map((x, i) => /* @__PURE__ */ jsxs("article", {
+								children: previews.map((x, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
 									className: `notch flex items-center gap-4 rounded-2xl p-5 ${i === 0 ? "bg-lime text-lime-foreground" : "bg-card text-card-foreground"}`,
 									children: [
-										/* @__PURE__ */ jsx("span", {
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 											className: "font-wide text-2xl font-medium opacity-60",
 											children: String(i + 1).padStart(2, "0")
 										}),
-										/* @__PURE__ */ jsxs("div", {
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											className: "min-w-0 flex-1",
-											children: [/* @__PURE__ */ jsx("h4", {
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 												className: "font-wide text-sm font-bold normal-case leading-snug",
 												children: x.title
-											}), /* @__PURE__ */ jsxs("div", {
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 												className: "mt-3 flex flex-wrap items-center gap-2",
-												children: [/* @__PURE__ */ jsxs("span", {
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 													className: `flex items-center gap-1.5 rounded-lg border border-ink/45 px-2.5 py-1.5 font-wide text-[11px] font-bold ${chip(x.status)}`,
 													children: [
-														/* @__PURE__ */ jsx(VerdictIcon, {
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)(VerdictIcon, {
 															s: x.status,
 															className: "h-3.5 w-3.5"
 														}),
 														" ",
 														statusLabels[x.status]
 													]
-												}), /* @__PURE__ */ jsx("span", {
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 													className: "text-[10px] font-medium opacity-80",
 													children: x.date
 												})]
 											})]
 										}),
-										/* @__PURE__ */ jsxs("span", {
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 											className: "font-wide text-2xl font-bold",
 											children: [x.score, "%"]
 										})
 									]
 								}, x.title))
 							}),
-							/* @__PURE__ */ jsx("p", {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-6 text-[11px] leading-relaxed opacity-70",
 								children: t("sampleDisclaimer")
 							})
@@ -418,34 +414,34 @@ function Index() {
 					})]
 				})
 			}),
-			/* @__PURE__ */ jsx("section", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 				className: "bg-primary px-6 py-20 text-primary-foreground",
-				children: /* @__PURE__ */ jsxs("div", {
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center",
-					children: [/* @__PURE__ */ jsx("h2", {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						className: "max-w-xl text-6xl md:text-7xl",
 						children: t("journalistCta")
-					}), /* @__PURE__ */ jsxs(Link, {
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 						to: "/login",
 						className: "flex shrink-0 items-center justify-between gap-6 rounded-2xl bg-ink px-8 py-5 font-display text-2xl text-ink-foreground transition hover:bg-ink-soft",
-						children: [t("openJournalistSpace"), /* @__PURE__ */ jsx(Arrow, { className: "h-7 w-7" })]
+						children: [t("openJournalistSpace"), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, { className: "h-7 w-7" })]
 					})]
 				})
 			}),
-			/* @__PURE__ */ jsx("footer", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("footer", {
 				className: "bg-ink px-6 pb-10 text-ink-foreground",
-				children: /* @__PURE__ */ jsxs("div", {
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 border-t border-ink-foreground/10 pt-10 md:flex-row md:items-center",
-					children: [/* @__PURE__ */ jsx(Link, {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 						to: "/",
 						"aria-label": "Ny Marina — accueil",
 						className: "block",
-						children: /* @__PURE__ */ jsx("img", {
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/icon.svg",
 							alt: "Ny Marina",
 							className: "h-auto w-36 object-contain sm:w-44"
 						})
-					}), /* @__PURE__ */ jsx("p", {
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-xs opacity-50",
 						children: t("resultsDisclaimer")
 					})]
