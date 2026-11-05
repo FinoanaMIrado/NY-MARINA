@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Arrow, Logo, VerdictIcon, verdictChip, type Verdict } from "@/components/brand";
+import { Arrow, VerdictIcon, verdictChip, type Verdict } from "@/components/brand";
 import { LanguageSelect, useLanguage } from "@/lib/i18n";
 import { Loupe } from "@/components/loupe";
 import crowd from "@/assets/crowd.jpg";
@@ -48,7 +48,9 @@ function Index() {
       {/* HERO */}
       <section className="bg-ink text-ink-foreground">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-          <Logo />
+          <Link to="/" aria-label="Ny Marina — accueil" className="block">
+            <img src="/icon.svg" alt="Ny Marina" className="h-auto w-36 object-contain sm:w-44" />
+          </Link>
           <div className="hidden items-center gap-10 text-sm md:flex">
             <a href="#comment" className="opacity-80 hover:opacity-100">{t("howItWorksNav")}</a>
             <a href="#pourquoi" className="opacity-80 hover:opacity-100">{t("whyNav")}</a>
@@ -217,7 +219,9 @@ function Index() {
 
       <footer className="bg-ink px-6 pb-10 text-ink-foreground">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 border-t border-ink-foreground/10 pt-10 md:flex-row md:items-center">
-          <Logo />
+          <Link to="/" aria-label="Ny Marina — accueil" className="block">
+            <img src="/icon.svg" alt="Ny Marina" className="h-auto w-36 object-contain sm:w-44" />
+          </Link>
           <p className="text-xs opacity-50">{t("resultsDisclaimer")}</p>
         </div>
       </footer>
