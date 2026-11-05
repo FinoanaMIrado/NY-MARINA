@@ -22,6 +22,7 @@ const chip = (s: string) => verdictChip[s as Verdict];
 
 function Index() {
   const { t } = useLanguage();
+  const statusLabels = { VRAI: t("true"), FAUX: t("false"), DOUTEUX: t("doubtful") };
   const steps = [
     { n: "01", title: t("stepSubmit"), description: t("stepSubmitDescription") },
     { n: "02", title: t("stepExtract"), description: t("stepExtractDescription") },
@@ -182,7 +183,7 @@ function Index() {
                     <h4 className="font-wide text-sm font-bold normal-case leading-snug">{x.title}</h4>
                     <div className="mt-3 flex flex-wrap items-center gap-2">
                       <span className={`flex items-center gap-1.5 rounded-lg border border-ink/45 px-2.5 py-1.5 font-wide text-[11px] font-bold ${chip(x.status)}`}>
-                        <VerdictIcon s={x.status as Verdict} className="h-3.5 w-3.5" /> {x.status}
+                        <VerdictIcon s={x.status as Verdict} className="h-3.5 w-3.5" /> {statusLabels[x.status]}
                       </span>
                       <span className="text-[10px] font-medium opacity-80">{x.date}</span>
                     </div>

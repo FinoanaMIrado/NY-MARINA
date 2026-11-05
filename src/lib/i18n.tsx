@@ -289,16 +289,19 @@ function isLanguage(value: string | null): value is Language {
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("fr");
+  const [hasLoadedPreference, setHasLoadedPreference] = useState(false);
 
   useEffect(() => {
     const savedLanguage = window.localStorage.getItem("ny-marina-language");
     if (isLanguage(savedLanguage)) setLanguageState(savedLanguage);
+    setHasLoadedPreference(true);
   }, []);
 
   useEffect(() => {
+    if (!hasLoadedPreference) return;
     document.documentElement.lang = language;
     window.localStorage.setItem("ny-marina-language", language);
-  }, [language]);
+  }, [hasLoadedPreference, language]);
 
   const value = useMemo<LanguageContextValue>(
     () => ({
