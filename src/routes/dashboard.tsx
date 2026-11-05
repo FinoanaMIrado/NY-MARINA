@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Logo, Verifier, VerdictIcon, verdictChip, type Verdict } from "@/components/brand";
+import { Stats } from "@/components/stats";
 import { LanguageSelect, useLanguage, type TranslationKey } from "@/lib/i18n";
 
 export const Route = createFileRoute("/dashboard")({
@@ -73,7 +74,7 @@ function Dossiers() {
 
 function Dashboard() {
   const { t } = useLanguage();
-  const [tab, setTab] = useState<"verifier" | "dossiers">("verifier");
+  const [tab, setTab] = useState<"verifier" | "dossiers" | "stats">("verifier");
   return (
     <main className="flex min-h-screen bg-ink text-ink-foreground">
       <aside className="sticky top-0 flex h-screen w-64 shrink-0 flex-col gap-2 border-r border-ink-foreground/10 p-6">
@@ -82,7 +83,7 @@ function Dashboard() {
           <LanguageSelect className="w-full" />
         </div>
         <nav className="mt-10 space-y-2">
-          {([["verifier", t("verifyTab")], ["dossiers", t("myChecks")]] as const).map(([k, l]) => (
+          {([["verifier", t("verifyTab")], ["dossiers", t("myChecks")], ["stats", t("statsTab")]] as const).map(([k, l]) => (
             <button key={k} onClick={() => setTab(k)} className={`w-full rounded-2xl px-4 py-3 text-left font-display text-2xl transition ${tab === k ? "bg-primary text-primary-foreground" : "opacity-70 hover:bg-ink-soft hover:opacity-100"}`}>
               {l}
             </button>
@@ -90,7 +91,7 @@ function Dashboard() {
         </nav>
         <Link to="/" className="mt-auto rounded-xl bg-ink-soft px-4 py-3 text-sm opacity-80 hover:opacity-100">{t("signOut")}</Link>
       </aside>
-      <div className="flex-1 overflow-x-hidden">{tab === "verifier" ? <Verifier /> : <Dossiers />}</div>
+      <div className="flex-1 overflow-x-hidden">{tab === "verifier" ? <Verifier /> : tab === "dossiers" ? <Dossiers /> : <Stats />}</div>
     </main>
   );
 }
