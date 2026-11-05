@@ -476,3 +476,38 @@ main.bg-ink .rounded-2xl.bg-ink-soft:hover {
     min-height: 12rem;
   }
 }
+
+  @keyframes dashboard-menu-enter {
+    from {
+      opacity: 0;
+      transform: translateY(-18px) scale(.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes dashboard-menu-item-enter {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dashboard-mobile-menu {
+    transform-origin: top center;
+    animation: dashboard-menu-enter .42s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  .dashboard-mobile-menu-item {
+    animation: dashboard-menu-item-enter .42s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  .dashboard-mobile-menu-item:hover {
+    transform: translateX(-6px);
+  }

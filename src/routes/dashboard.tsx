@@ -75,9 +75,70 @@ function Dossiers() {
 function Dashboard() {
   const { t } = useLanguage();
   const [tab, setTab] = useState<"verifier" | "dossiers" | "stats">("verifier");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const selectTab = (nextTab: "verifier" | "dossiers" | "stats") => {
+    setTab(nextTab);
+    setMobileMenuOpen(false);
+  };
+
   return (
     <main className={`flex min-h-screen flex-col bg-ink text-ink-foreground lg:flex-row ${tab === "stats" ? "dashboard-stats-mode" : ""}`}>
-      <aside className="z-30 flex h-auto w-full shrink-0 flex-col gap-3 border-b border-ink-foreground/10 p-4 sm:p-5 lg:sticky lg:top-0 lg:h-screen lg:w-64 lg:flex-col lg:gap-2 lg:border-b-0 lg:border-r lg:p-6">
+      <header className="dashboard-mobile-header flex items-center justify-between gap-3 border-b border-ink-foreground/10 px-4 py-3 lg:hidden">
+        <Link to="/" aria-label="Ny Marina — accueil" className="block">
+          <img src="/icon.svg" alt="Ny Marina" className="h-auto w-32 object-contain" />
+        </Link>
+        <div className="flex items-center gap-2">
+          <LanguageSelect />
+          <button
+            type="button"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="dashboard-mobile-menu"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="rounded-full bg-primary px-4 py-2 font-wide text-xs font-bold uppercase text-primary-foreground transition-transform hover:scale-105"
+          >
+            {mobileMenuOpen ? t("closeMenu") : t("openMenu")}
+          </button>
+        </div>
+      </header>
+
+      {mobileMenuOpen && (
+        <div
+          id="dashboard-mobile-menu"
+          className="dashboard-mobile-menu fixed inset-x-3 top-3 z-50 rounded-[2rem] bg-lime p-6 text-lime-foreground shadow-2xl sm:inset-x-5 sm:p-8 lg:hidden"
+        >
+          <div className="flex items-center justify-between">
+            <span className="font-wide text-xs font-bold uppercase tracking-[.2em]">Ny Marina</span>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-full border border-lime-foreground/25 px-4 py-2 font-wide text-xs font-bold uppercase"
+            >
+              {t("closeMenu")}
+            </button>
+          </div>
+          <nav aria-label={t("dashboardNavigation")} className="mt-8 flex flex-col items-end gap-1">
+            {([["verifier", t("verifyTab")], ["dossiers", t("myChecks")], ["stats", t("statsTab")]] as const).map(([key, label], index) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => selectTab(key)}
+                className={`dashboard-mobile-menu-item text-right font-display text-5xl uppercase leading-[.95] sm:text-6xl ${tab === key ? "text-primary" : ""}`}
+                style={{ animationDelay: `${index * 70}ms` }}
+              >
+                {label}
+              </button>
+            ))}
+          </nav>
+          <div className="mt-8 flex justify-end border-t border-lime-foreground/20 pt-5">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-sm font-semibold underline underline-offset-4">
+              {t("signOut")} ↗
+            </Link>
+          </div>
+        </div>
+      )}
+
+      <aside className="z-30 hidden h-screen w-64 shrink-0 flex-col gap-2 border-r border-ink-foreground/10 p-6 lg:sticky lg:top-0 lg:flex">
         <div className="flex items-center justify-between gap-4 lg:flex-col lg:items-stretch lg:gap-5">
           <Link to="/" aria-label="Ny Marina — accueil" className="block">
             <img src="/icon.svg" alt="Ny Marina" className="h-auto w-32 object-contain sm:w-40 lg:w-full lg:max-w-44" />
@@ -86,7 +147,7 @@ function Dashboard() {
         </div>
         <nav className="-mx-1 flex gap-2 overflow-x-auto pb-1 lg:mx-0 lg:mt-10 lg:flex-col lg:overflow-visible lg:pb-0">
           {([["verifier", t("verifyTab")], ["dossiers", t("myChecks")], ["stats", t("statsTab")]] as const).map(([k, l]) => (
-            <button key={k} onClick={() => setTab(k)} className={`shrink-0 rounded-xl px-3 py-2 text-left font-display text-lg transition sm:px-4 lg:w-full lg:rounded-2xl lg:py-3 lg:text-2xl ${tab === k ? "bg-primary text-primary-foreground" : "opacity-70 hover:bg-ink-soft hover:opacity-100"}`}>
+            <button key={k} onClick={() => selectTab(k)} className={`shrink-0 rounded-xl px-3 py-2 text-left font-display text-lg transition sm:px-4 lg:w-full lg:rounded-2xl lg:py-3 lg:text-2xl ${tab === k ? "bg-primary text-primary-foreground" : "opacity-70 hover:bg-ink-soft hover:opacity-100"}`}>
               {l}
             </button>
           ))}

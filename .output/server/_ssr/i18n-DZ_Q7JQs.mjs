@@ -1,6 +1,8 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { jsx, jsxs } from "react/jsx-runtime";
-//#region src/lib/i18n.tsx
+import { n as __toESM } from "../_runtime.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/i18n-DZ_Q7JQs.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
 var languages = [
 	"mg",
 	"fr",
@@ -69,6 +71,9 @@ var messages = {
 		uploadPressCard: "Importer votre carte de presse",
 		pressCardFormats: "Recto, PNG, JPG ou PDF",
 		signIn: "Se connecter",
+		openMenu: "Menu",
+		closeMenu: "Fermer",
+		dashboardNavigation: "Navigation du tableau de bord",
 		verifyTab: "Vérifier",
 		myChecks: "Mes vérifications",
 		statsTab: "Statistiques",
@@ -163,6 +168,9 @@ var messages = {
 		uploadPressCard: "Ampidiro ny karatra maha-mpanao gazety",
 		pressCardFormats: "Lafiny aloha, PNG, JPG na PDF",
 		signIn: "Hiditra",
+		openMenu: "Menu",
+		closeMenu: "Hidio",
+		dashboardNavigation: "Fivezivezen'ny takelaka",
 		verifyTab: "Hamarino",
 		myChecks: "Ny fanamarinako",
 		statsTab: "Antontan'isa",
@@ -257,6 +265,9 @@ var messages = {
 		uploadPressCard: "Upload your press card",
 		pressCardFormats: "Front side, PNG, JPG, or PDF",
 		signIn: "Sign in",
+		openMenu: "Menu",
+		closeMenu: "Close",
+		dashboardNavigation: "Dashboard navigation",
 		verifyTab: "Verify",
 		myChecks: "My checks",
 		statsTab: "Statistics",
@@ -290,62 +301,62 @@ var messages = {
 		scoreDisclaimer: "This percentage is an estimate, not a guarantee."
 	}
 };
-var LanguageContext = createContext(null);
+var LanguageContext = (0, import_react.createContext)(null);
 function isLanguage(value) {
 	return value !== null && languages.some((language) => language === value);
 }
 function LanguageProvider({ children }) {
-	const [language, setLanguageState] = useState("fr");
-	const [hasLoadedPreference, setHasLoadedPreference] = useState(false);
-	useEffect(() => {
+	const [language, setLanguageState] = (0, import_react.useState)("fr");
+	const [hasLoadedPreference, setHasLoadedPreference] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
 		const savedLanguage = window.localStorage.getItem("ny-marina-language");
 		if (isLanguage(savedLanguage)) setLanguageState(savedLanguage);
 		setHasLoadedPreference(true);
 	}, []);
-	useEffect(() => {
+	(0, import_react.useEffect)(() => {
 		if (!hasLoadedPreference) return;
 		document.documentElement.lang = language;
 		window.localStorage.setItem("ny-marina-language", language);
 	}, [hasLoadedPreference, language]);
-	const value = useMemo(() => ({
+	const value = (0, import_react.useMemo)(() => ({
 		language,
 		setLanguage: setLanguageState,
 		t: (key) => messages[language][key]
 	}), [language]);
-	return /* @__PURE__ */ jsx(LanguageContext.Provider, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageContext.Provider, {
 		value,
 		children
 	});
 }
 function useLanguage() {
-	const context = useContext(LanguageContext);
+	const context = (0, import_react.useContext)(LanguageContext);
 	if (!context) throw new Error("useLanguage must be used within a LanguageProvider");
 	return context;
 }
 function LanguageSelect({ className = "" }) {
 	const { language, setLanguage, t } = useLanguage();
-	return /* @__PURE__ */ jsxs("label", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
 		className: `inline-flex items-center gap-2 text-sm ${className}`,
-		children: [/* @__PURE__ */ jsx("span", {
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 			className: "sr-only",
 			children: t("language")
-		}), /* @__PURE__ */ jsxs("select", {
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
 			"aria-label": t("language"),
 			value: language,
 			onChange: (event) => setLanguage(event.target.value),
 			className: "cursor-pointer rounded-xl border border-current/20 bg-transparent px-3 py-2 text-current outline-none transition hover:bg-current/10 focus-visible:ring-2 focus-visible:ring-primary",
 			children: [
-				/* @__PURE__ */ jsx("option", {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 					value: "mg",
 					className: "bg-background text-foreground",
 					children: "Malagasy"
 				}),
-				/* @__PURE__ */ jsx("option", {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 					value: "fr",
 					className: "bg-background text-foreground",
 					children: "Français"
 				}),
-				/* @__PURE__ */ jsx("option", {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 					value: "en",
 					className: "bg-background text-foreground",
 					children: "English"
