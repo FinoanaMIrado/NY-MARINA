@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Arrow, Logo, VerdictIcon, verdictChip, type Verdict } from "@/components/brand";
 import { LanguageSelect, useLanguage } from "@/lib/i18n";
+import { Loupe } from "@/components/loupe";
 import crowd from "@/assets/crowd.jpg";
 import strip from "@/assets/strip.jpg";
 
@@ -43,6 +44,7 @@ function Index() {
 
   return (
     <main className="min-h-screen bg-background">
+      <Loupe />
       {/* HERO */}
       <section className="bg-ink text-ink-foreground">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
