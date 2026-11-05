@@ -154,7 +154,7 @@ function Dashboard() {
         </nav>
         <Link to="/" className="ml-auto rounded-xl bg-ink-soft px-4 py-2 text-xs opacity-80 hover:opacity-100 lg:mt-auto">{t("signOut")}</Link>
       </aside>
-      <div className={`flex-1 overflow-x-hidden ${tab === "stats" ? "dashboard-stats-content" : ""}`}>
+      <div className={`w-full min-w-0 flex-1 overflow-x-hidden ${tab === "stats" ? "dashboard-stats-content" : ""}`}>
         {tab === "verifier" ? <Verifier /> : tab === "dossiers" ? <Dossiers /> : <Stats />}
       </div>
     </main>
