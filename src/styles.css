@@ -215,8 +215,16 @@ main.bg-background > section:first-of-type::before {
   animation: marina-glow 9s ease-in-out infinite;
 }
 
-main.bg-background > section:first-of-type > nav {
+.landing-header {
+  box-shadow: 0 8px 24px oklch(0 0 0 / .12);
+}
+
+.landing-header > nav {
   animation: marina-fade-down .7s cubic-bezier(.2,.8,.2,1) both;
+}
+
+main.bg-background > section[id] {
+  scroll-margin-top: 7rem;
 }
 
 main.bg-background > section:first-of-type > div:last-child h1 > span {

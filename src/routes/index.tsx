@@ -46,7 +46,7 @@ function Index() {
     <main className="min-h-screen bg-background">
       <Loupe />
       {/* HERO */}
-      <section className="bg-ink text-ink-foreground">
+      <header className="landing-header sticky top-0 z-[100] bg-ink text-ink-foreground">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
           <Link to="/" aria-label="Ny Marina — accueil" className="block">
             <img src="/icon.svg" alt="Ny Marina" className="h-auto w-36 object-contain sm:w-44" />
@@ -66,7 +66,9 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 pb-2 sm:hidden">
           <LanguageSelect />
         </div>
+      </header>
 
+      <section className="bg-ink text-ink-foreground">
         <div className="mx-auto max-w-6xl px-6 pb-20 pt-12">
           <h1 className="animate-rise text-[13vw] leading-[0.85] md:text-[8.5rem]">
             <span className="flex flex-wrap items-center gap-4">

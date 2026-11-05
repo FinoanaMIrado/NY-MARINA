@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { n as LanguageSelect, r as useLanguage } from "./i18n-qmd7XwEY.mjs";
 import { a as verdictChip, r as VerdictIcon, t as Arrow } from "./brand-C_aEMW7F.mjs";
 import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Csctp9OK.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BJqh1NFC.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 /**
@@ -142,109 +142,109 @@ function Index() {
 		className: "min-h-screen bg-background",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Loupe, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-				className: "bg-ink text-ink-foreground",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-						className: "mx-auto flex max-w-6xl items-center justify-between px-6 py-6",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-								to: "/",
-								"aria-label": "Ny Marina — accueil",
-								className: "block",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-									src: "/icon.svg",
-									alt: "Ny Marina",
-									className: "h-auto w-36 object-contain sm:w-44"
-								})
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "hidden items-center gap-10 text-sm md:flex",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										href: "#comment",
-										className: "opacity-80 hover:opacity-100",
-										children: t("howItWorksNav")
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										href: "#pourquoi",
-										className: "opacity-80 hover:opacity-100",
-										children: t("whyNav")
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										href: "#repere",
-										className: "opacity-80 hover:opacity-100",
-										children: t("detectNav")
-									})
-								]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, { className: "hidden sm:inline-flex" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-									to: "/login",
-									className: "rounded-xl bg-ink-foreground px-5 py-3 text-sm font-medium text-ink hover:bg-primary hover:text-primary-foreground",
-									children: t("journalistSpace")
-								})]
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+				className: "landing-header sticky top-0 z-[100] bg-ink text-ink-foreground",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+					className: "mx-auto flex max-w-6xl items-center justify-between px-6 py-6",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/",
+							"aria-label": "Ny Marina — accueil",
+							className: "block",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								src: "/icon.svg",
+								alt: "Ny Marina",
+								className: "h-auto w-36 object-contain sm:w-44"
 							})
-						]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "mx-auto max-w-6xl px-6 pb-2 sm:hidden",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, {})
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mx-auto max-w-6xl px-6 pb-20 pt-12",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-							className: "animate-rise text-[13vw] leading-[0.85] md:text-[8.5rem]",
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "hidden items-center gap-10 text-sm md:flex",
 							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "flex flex-wrap items-center gap-4",
-									children: [t("heroLine1"), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-										src: strip_default,
-										alt: "",
-										className: "hidden h-[0.8em] w-[2.2em] rounded-2xl object-cover md:block"
-									})]
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#comment",
+									className: "opacity-80 hover:opacity-100",
+									children: t("howItWorksNav")
 								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "flex flex-wrap items-center gap-4",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-										src: crowd_default,
-										alt: "",
-										className: "hidden h-[0.8em] w-[2.6em] rounded-2xl object-cover md:block"
-									}), t("heroLine2")]
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#pourquoi",
+									className: "opacity-80 hover:opacity-100",
+									children: t("whyNav")
 								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "flex flex-wrap items-center gap-4",
-									children: [
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-											className: "hidden h-[0.8em] w-[0.6em] flex-col justify-between rounded-2xl bg-accent p-2 md:flex",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-1/2 w-full rounded-lg bg-ink" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "aspect-square w-full rounded-full bg-primary" })]
-										}),
-										t("heroLine3"),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-											href: "#repere",
-											className: "flex h-[0.8em] w-[0.8em] items-center justify-center rounded-2xl bg-primary text-primary-foreground transition hover:rotate-[-45deg]",
-											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, { className: "h-1/2 w-1/2" })
-										})
-									]
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#repere",
+									className: "opacity-80 hover:opacity-100",
+									children: t("detectNav")
 								})
 							]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-10 flex flex-col justify-between gap-6 text-sm md:flex-row",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "max-w-lg leading-relaxed opacity-70",
-								children: t("heroDescription")
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-								className: "text-right opacity-70",
-								children: [
-									t("verificationLabel"),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-									t("madeInMadagascar")
-								]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, { className: "hidden sm:inline-flex" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/login",
+								className: "rounded-xl bg-ink-foreground px-5 py-3 text-sm font-medium text-ink hover:bg-primary hover:text-primary-foreground",
+								children: t("journalistSpace")
 							})]
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mx-auto max-w-6xl px-6 pb-2 sm:hidden",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageSelect, {})
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+				className: "bg-ink text-ink-foreground",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mx-auto max-w-6xl px-6 pb-20 pt-12",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
+						className: "animate-rise text-[13vw] leading-[0.85] md:text-[8.5rem]",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "flex flex-wrap items-center gap-4",
+								children: [t("heroLine1"), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+									src: strip_default,
+									alt: "",
+									className: "hidden h-[0.8em] w-[2.2em] rounded-2xl object-cover md:block"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "flex flex-wrap items-center gap-4",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+									src: crowd_default,
+									alt: "",
+									className: "hidden h-[0.8em] w-[2.6em] rounded-2xl object-cover md:block"
+								}), t("heroLine2")]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "flex flex-wrap items-center gap-4",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+										className: "hidden h-[0.8em] w-[0.6em] flex-col justify-between rounded-2xl bg-accent p-2 md:flex",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-1/2 w-full rounded-lg bg-ink" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "aspect-square w-full rounded-full bg-primary" })]
+									}),
+									t("heroLine3"),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: "#repere",
+										className: "flex h-[0.8em] w-[0.8em] items-center justify-center rounded-2xl bg-primary text-primary-foreground transition hover:rotate-[-45deg]",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Arrow, { className: "h-1/2 w-1/2" })
+									})
+								]
+							})
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-10 flex flex-col justify-between gap-6 text-sm md:flex-row",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "max-w-lg leading-relaxed opacity-70",
+							children: t("heroDescription")
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+							className: "text-right opacity-70",
+							children: [
+								t("verificationLabel"),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+								t("madeInMadagascar")
+							]
 						})]
-					})
-				]
+					})]
+				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				id: "pourquoi",
