@@ -1,12 +1,12 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
-import { t as LanguageProvider } from "./i18n-CnBczehJ.mjs";
+import { t as LanguageProvider } from "./i18n-BbklbTVS.mjs";
 import { _ as createFileRoute, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRouteWithContext, x as useRouter, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CEKrr9lA.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CmeohMsv.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-DyIzVevi.css";
+var styles_default = "/assets/styles-BYK6aDRH.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -37,64 +37,6 @@ function describeThrown(error) {
 	} catch {
 		return String(error);
 	}
-}
-/**
-* Curseur "loupe de recherche" : une lentille qui suit la souris et
-* affiche le contenu en dessous en couleurs inversées.
-* Désactivée sur les écrans tactiles.
-*/
-var SIZE = 120;
-function Loupe() {
-	const ref = (0, import_react.useRef)(null);
-	const [enabled, setEnabled] = (0, import_react.useState)(false);
-	const [visible, setVisible] = (0, import_react.useState)(false);
-	const [pressed, setPressed] = (0, import_react.useState)(false);
-	(0, import_react.useEffect)(() => {
-		if (!window.matchMedia("(pointer: fine)").matches) return;
-		setEnabled(true);
-		document.documentElement.classList.add("loupe-active");
-		let x = -200, y = -200, cx = x, cy = y, raf = 0;
-		const loop = () => {
-			cx += (x - cx) * .25;
-			cy += (y - cy) * .25;
-			if (ref.current) ref.current.style.transform = `translate3d(${cx - SIZE / 2}px, ${cy - SIZE / 2}px, 0)`;
-			raf = requestAnimationFrame(loop);
-		};
-		const move = (e) => {
-			x = e.clientX;
-			y = e.clientY;
-			setVisible(true);
-		};
-		const leave = () => setVisible(false);
-		const down = () => setPressed(true);
-		const up = () => setPressed(false);
-		window.addEventListener("pointermove", move);
-		document.addEventListener("pointerleave", leave);
-		window.addEventListener("pointerdown", down);
-		window.addEventListener("pointerup", up);
-		raf = requestAnimationFrame(loop);
-		return () => {
-			cancelAnimationFrame(raf);
-			window.removeEventListener("pointermove", move);
-			document.removeEventListener("pointerleave", leave);
-			window.removeEventListener("pointerdown", down);
-			window.removeEventListener("pointerup", up);
-			document.documentElement.classList.remove("loupe-active");
-		};
-	}, []);
-	if (!enabled) return null;
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		ref,
-		"aria-hidden": true,
-		className: "loupe",
-		"data-visible": visible,
-		"data-pressed": pressed,
-		style: {
-			width: SIZE,
-			height: SIZE
-		},
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "loupe-lens" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "loupe-handle" })]
-	});
 }
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -221,10 +163,10 @@ function RootComponent() {
 	const { queryClient } = Route$3.useRouteContext();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QueryClientProvider, {
 		client: queryClient,
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(LanguageProvider, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Loupe, {})] })
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LanguageProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) })
 	});
 }
-var $$splitComponentImporter$2 = () => import("./routes-CS2pvjec.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-qLGSy5WO.mjs");
 var Route$2 = createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "Ny Marina — Vérifiez la fiabilité d'une information" },
@@ -251,7 +193,7 @@ var Route$2 = createFileRoute("/")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./dashboard-BgobAIiu.mjs");
+var $$splitComponentImporter$1 = () => import("./dashboard-DVRqPn7m.mjs");
 var Route$1 = createFileRoute("/dashboard")({
 	head: () => ({ meta: [
 		{ title: "Tableau de bord — Ny Marina" },
@@ -278,7 +220,7 @@ var Route$1 = createFileRoute("/dashboard")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./login-hhtYtAPJ.mjs");
+var $$splitComponentImporter = () => import("./login-01PQ9Wb6.mjs");
 var Route = createFileRoute("/login")({
 	head: () => ({ meta: [
 		{ title: "Connexion journaliste — Ny Marina" },

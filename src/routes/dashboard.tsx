@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Logo, Verifier, VerdictIcon, verdictChip, type Verdict } from "@/components/brand";
+import { Verifier, VerdictIcon, verdictChip, type Verdict } from "@/components/brand";
 import { Stats } from "@/components/stats";
 import { LanguageSelect, useLanguage, type TranslationKey } from "@/lib/i18n";
 
@@ -79,7 +79,9 @@ function Dashboard() {
     <main className="flex min-h-screen bg-ink text-ink-foreground">
       <aside className="sticky top-0 flex h-screen w-64 shrink-0 flex-col gap-2 border-r border-ink-foreground/10 p-6">
         <div className="space-y-5">
-          <Logo />
+          <Link to="/" aria-label="Ny Marina — accueil" className="block">
+            <img src="/icon.svg" alt="Ny Marina" className="h-auto w-full max-w-44 object-contain" />
+          </Link>
           <LanguageSelect className="w-full" />
         </div>
         <nav className="mt-10 space-y-2">

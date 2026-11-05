@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-FCKCJXF3.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BqWnYCTz.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/home/fimri/Bureau/NYMAKA/src/routes/__root.tsx",
@@ -7,27 +7,27 @@ var tsrStartManifest = () => ({ routes: {
 			"/dashboard",
 			"/login"
 		],
-		preloads: ["/assets/index-D_Qye1ch.js", "/assets/i18n-CPGg7bz6.js"],
+		preloads: ["/assets/index-CtgZqeHi.js", "/assets/i18n-Ccs-ri9k.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-D_Qye1ch.js"
+			src: "/assets/index-CtgZqeHi.js"
 		} }]
 	},
 	"/": {
 		filePath: "/home/fimri/Bureau/NYMAKA/src/routes/index.tsx",
 		children: void 0,
-		preloads: ["/assets/routes-CiRdHSOi.js", "/assets/brand-NWyoH6jC.js"]
+		preloads: ["/assets/routes-DxhYegC2.js", "/assets/brand-Xh6mgNXh.js"]
 	},
 	"/dashboard": {
 		filePath: "/home/fimri/Bureau/NYMAKA/src/routes/dashboard.tsx",
 		children: void 0,
-		preloads: ["/assets/dashboard-Ds5ml7tU.js", "/assets/brand-NWyoH6jC.js"]
+		preloads: ["/assets/dashboard-CmFhmRmA.js", "/assets/brand-Xh6mgNXh.js"]
 	},
 	"/login": {
 		filePath: "/home/fimri/Bureau/NYMAKA/src/routes/login.tsx",
 		children: void 0,
-		preloads: ["/assets/login-CawNe8qF.js", "/assets/brand-NWyoH6jC.js"]
+		preloads: ["/assets/login-DZg8ODFs.js", "/assets/brand-Xh6mgNXh.js"]
 	}
 } });
 //#endregion

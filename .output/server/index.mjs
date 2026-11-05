@@ -16,82 +16,82 @@ globalThis.__nitro_vite_envs__ = services;
 //#endregion
 //#region #nitro/virtual/public-assets-data
 var public_assets_data_default = {
-	"/assets/brand-NWyoH6jC.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"16a2-tLhdaMQ15b1XGHuLDZ9KrEzsNlE\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
-		"size": 5794,
-		"path": "../public/assets/brand-NWyoH6jC.js"
+	"/icon.svg": {
+		"type": "image/svg+xml",
+		"etag": "\"86f0-XZpT/F5hCTUJlUYylD4LXLg6KaM\"",
+		"mtime": "2026-11-05T14:34:41.299Z",
+		"size": 34544,
+		"path": "../public/icon.svg"
 	},
 	"/robots.txt": {
 		"type": "text/plain; charset=utf-8",
 		"etag": "\"a0-CKGXSIe7TSsqDTmGm/nY1t/o5d0\"",
-		"mtime": "2026-11-05T14:02:25.216Z",
+		"mtime": "2026-11-05T14:34:41.300Z",
 		"size": 160,
 		"path": "../public/robots.txt"
 	},
-	"/assets/dashboard-Ds5ml7tU.js": {
+	"/assets/brand-Xh6mgNXh.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"e95-LSnX1nOUp9+Vkg0NVnVCaYwA7r0\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
-		"size": 3733,
-		"path": "../public/assets/dashboard-Ds5ml7tU.js"
-	},
-	"/assets/i18n-CPGg7bz6.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5d51-z9A35EmDeb0pQhBJclBZnXbXEQM\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
-		"size": 23889,
-		"path": "../public/assets/i18n-CPGg7bz6.js"
+		"etag": "\"16a2-PNesx3JHlZdOHjDgQ9YqgsVU2Ek\"",
+		"mtime": "2026-11-05T14:34:38.336Z",
+		"size": 5794,
+		"path": "../public/assets/brand-Xh6mgNXh.js"
 	},
 	"/assets/crowd-CIaK49eW.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"307ec-hs/ttudWMr0x86EcHKSV1oGIPkI\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
+		"mtime": "2026-11-05T14:34:38.337Z",
 		"size": 198636,
 		"path": "../public/assets/crowd-CIaK49eW.jpg"
 	},
-	"/assets/login-CawNe8qF.js": {
+	"/assets/dashboard-CmFhmRmA.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"a04-b/rm7a//h9lL5AFphpfmCf2HtHE\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
-		"size": 2564,
-		"path": "../public/assets/login-CawNe8qF.js"
+		"etag": "\"1e28-Khbmg/5qRxIeITgQUSyYz2fqBgI\"",
+		"mtime": "2026-11-05T14:34:38.337Z",
+		"size": 7720,
+		"path": "../public/assets/dashboard-CmFhmRmA.js"
 	},
-	"/assets/routes-CiRdHSOi.js": {
+	"/assets/i18n-Ccs-ri9k.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"2333-n8nBTdni0dAdMHXB6xMB9Gi2IEs\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
-		"size": 9011,
-		"path": "../public/assets/routes-CiRdHSOi.js"
+		"etag": "\"5efa-l6sgkVP12+aBo9EccpgZiyDo5Uo\"",
+		"mtime": "2026-11-05T14:34:38.337Z",
+		"size": 24314,
+		"path": "../public/assets/i18n-Ccs-ri9k.js"
+	},
+	"/assets/index-CtgZqeHi.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"5840d-P6Xt3C5ZEqJGrpFZG/gSL4Rg0Uk\"",
+		"mtime": "2026-11-05T14:34:38.335Z",
+		"size": 361485,
+		"path": "../public/assets/index-CtgZqeHi.js"
+	},
+	"/assets/login-DZg8ODFs.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"a04-gu0F9VK/O5Psdn3pcGQW344ieIc\"",
+		"mtime": "2026-11-05T14:34:38.337Z",
+		"size": 2564,
+		"path": "../public/assets/login-DZg8ODFs.js"
+	},
+	"/assets/routes-DxhYegC2.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"280d-U+wM4JoB9ShC1ARDyQ6LfD0Zap0\"",
+		"mtime": "2026-11-05T14:34:38.337Z",
+		"size": 10253,
+		"path": "../public/assets/routes-DxhYegC2.js"
 	},
 	"/assets/strip-DWtm68YR.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"19cca-XfppJAk0dBpTdvheN6hMCM3/mpU\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
+		"mtime": "2026-11-05T14:34:38.338Z",
 		"size": 105674,
 		"path": "../public/assets/strip-DWtm68YR.jpg"
 	},
-	"/assets/index-D_Qye1ch.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"588d7-j5GfrzRXy72bf67yd2uJuGvclHE\"",
-		"mtime": "2026-11-05T14:02:24.299Z",
-		"size": 362711,
-		"path": "../public/assets/index-D_Qye1ch.js"
-	},
-	"/assets/styles-DyIzVevi.css": {
+	"/assets/styles-BYK6aDRH.css": {
 		"type": "text/css; charset=utf-8",
-		"etag": "\"13aa0-SB76hpjxOD5ceWCfvw5odIFNfOw\"",
-		"mtime": "2026-11-05T14:02:24.301Z",
-		"size": 80544,
-		"path": "../public/assets/styles-DyIzVevi.css"
-	},
-	"/favicon.ico": {
-		"type": "image/vnd.microsoft.icon",
-		"etag": "\"4f95-3RXc3p2mhEAs1WBwaIvE0Y0uu0Y\"",
-		"mtime": "2026-11-05T14:02:25.216Z",
-		"size": 20373,
-		"path": "../public/favicon.ico"
+		"etag": "\"13b4a-B7xi/z+xJ03r2FIMCHCvu5ADzEo\"",
+		"mtime": "2026-11-05T14:34:38.338Z",
+		"size": 80714,
+		"path": "../public/assets/styles-BYK6aDRH.css"
 	}
 };
 //#endregion

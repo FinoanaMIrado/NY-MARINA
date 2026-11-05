@@ -1,6 +1,6 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/i18n-CnBczehJ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/i18n-BbklbTVS.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var languages = [
@@ -73,6 +73,11 @@ var messages = {
 		signIn: "Se connecter",
 		verifyTab: "Vérifier",
 		myChecks: "Mes vérifications",
+		statsTab: "Statistiques",
+		statsTotal: "Vérifications",
+		statsAvg: "Score moyen",
+		statsTrend: "Activité sur 6 mois",
+		statsShare: "Répartition des verdicts",
 		signOut: "Se déconnecter",
 		true: "VRAI",
 		false: "FAUX",
@@ -162,6 +167,11 @@ var messages = {
 		signIn: "Hiditra",
 		verifyTab: "Hamarino",
 		myChecks: "Ny fanamarinako",
+		statsTab: "Antontan'isa",
+		statsTotal: "Fanamarinana",
+		statsAvg: "Isa antonony",
+		statsTrend: "Asa tao anatin'ny 6 volana",
+		statsShare: "Fizarana valiny",
 		signOut: "Hivoaka",
 		true: "MARINA",
 		false: "DISO",
@@ -251,6 +261,11 @@ var messages = {
 		signIn: "Sign in",
 		verifyTab: "Verify",
 		myChecks: "My checks",
+		statsTab: "Statistics",
+		statsTotal: "Checks",
+		statsAvg: "Average score",
+		statsTrend: "Activity over 6 months",
+		statsShare: "Verdict breakdown",
 		signOut: "Sign out",
 		true: "TRUE",
 		false: "FALSE",

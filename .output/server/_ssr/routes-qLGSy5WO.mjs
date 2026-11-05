@@ -1,9 +1,69 @@
-import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { n as LanguageSelect, r as useLanguage } from "./i18n-CnBczehJ.mjs";
-import { a as verdictChip, n as Logo, r as VerdictIcon, t as Arrow } from "./brand-De9iNc6A.mjs";
+import { n as __toESM } from "../_runtime.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { n as LanguageSelect, r as useLanguage } from "./i18n-BbklbTVS.mjs";
+import { a as verdictChip, n as Logo, r as VerdictIcon, t as Arrow } from "./brand-j52OpRNd.mjs";
 import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CS2pvjec.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-qLGSy5WO.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
+/**
+* Curseur "loupe de recherche" : une lentille qui suit la souris et
+* affiche le contenu en dessous en couleurs inversées.
+* Désactivée sur les écrans tactiles.
+*/
+var SIZE = 120;
+function Loupe() {
+	const ref = (0, import_react.useRef)(null);
+	const [enabled, setEnabled] = (0, import_react.useState)(false);
+	const [visible, setVisible] = (0, import_react.useState)(false);
+	const [pressed, setPressed] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		if (!window.matchMedia("(pointer: fine)").matches) return;
+		setEnabled(true);
+		document.documentElement.classList.add("loupe-active");
+		let x = -200, y = -200, cx = x, cy = y, raf = 0;
+		const loop = () => {
+			cx += (x - cx) * .25;
+			cy += (y - cy) * .25;
+			if (ref.current) ref.current.style.transform = `translate3d(${cx - SIZE / 2}px, ${cy - SIZE / 2}px, 0)`;
+			raf = requestAnimationFrame(loop);
+		};
+		const move = (e) => {
+			x = e.clientX;
+			y = e.clientY;
+			setVisible(true);
+		};
+		const leave = () => setVisible(false);
+		const down = () => setPressed(true);
+		const up = () => setPressed(false);
+		window.addEventListener("pointermove", move);
+		document.addEventListener("pointerleave", leave);
+		window.addEventListener("pointerdown", down);
+		window.addEventListener("pointerup", up);
+		raf = requestAnimationFrame(loop);
+		return () => {
+			cancelAnimationFrame(raf);
+			window.removeEventListener("pointermove", move);
+			document.removeEventListener("pointerleave", leave);
+			window.removeEventListener("pointerdown", down);
+			window.removeEventListener("pointerup", up);
+			document.documentElement.classList.remove("loupe-active");
+		};
+	}, []);
+	if (!enabled) return null;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		ref,
+		"aria-hidden": true,
+		className: "loupe",
+		"data-visible": visible,
+		"data-pressed": pressed,
+		style: {
+			width: SIZE,
+			height: SIZE
+		},
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "loupe-lens" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "loupe-handle" })]
+	});
+}
 var crowd_default = "/assets/crowd-CIaK49eW.jpg";
 var strip_default = "/assets/strip-DWtm68YR.jpg";
 var chip = (s) => verdictChip[s];
@@ -81,6 +141,7 @@ function Index() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
 		className: "min-h-screen bg-background",
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Loupe, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "bg-ink text-ink-foreground",
 				children: [
